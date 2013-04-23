@@ -19,6 +19,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+set autoread          " Recharge le fichier lorsqu'il a été changer à l'exterieur
+" set autoindent        " Autoindent on line break
+
 " -- Recherche
 set ignorecase        " Ignore la casse lors d'une recherche
 set smartcase         " Active la casse si la recherche en contient une
@@ -32,6 +35,7 @@ set noerrorbells      " Empeche Vim de bepper
 "convert tab to space
 set expandtab
 set tabstop=4
+set shiftwidth=4
 
 " Active le comportement 'normal' de la touche backspace
 set backspace=indent,eol,start
@@ -60,3 +64,16 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+" Files format
+au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
+au BufNewFile,BufRead *.twig :set ft=html " twig are HTML
+
+
+
+
+"HTML
+" Bind ctrl + space for completion
+:imap <C-Space> <C-X><C-O>
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
