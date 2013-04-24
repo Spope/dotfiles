@@ -11,6 +11,10 @@ set ruler             " Affiche la position du curseur
 set wrap              " Affiche les lignes trop longues sur plusieurs ligne
 set scrolloff=3       " Affiche un mini de 3 lignes autor du curseur
 
+set encoding=utf-8
+set hi=1000           " Historique des commandes
+
+
 " Active la coloration syntaxique
 syntax enable
 " Active les comportements specifiques aux types de fichiers comme
@@ -19,7 +23,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-set autoread          " Recharge le fichier lorsqu'il a été changer à l'exterieur
+set autoread          " Recharge le fichier lorsqu'il a été changé à l'exterieur
 " set autoindent        " Autoindent on line break
 
 " -- Recherche
@@ -43,18 +47,22 @@ set backspace=indent,eol,start
 " Cache les fichiers lors de l'ouverture d'autre fichiers
 set hidden
 
-" colorscheme xoria256
-set background=dark
-colorscheme solarized
+let molokai_original=1
+colorscheme molokai
+if has("win32") || has("win16")
+    set guifont=Consolas:h10
+else
+    set guifont=Monospace
+endif
+" Monospace
+" set background=dark
+" colorscheme solarized
 
 " Leader map for plugins
 let mapleader=","
 
 "Open nerdtree on F2
 map <F2> :NERDTreeToggle<CR>
-
-"TWIG coloration (use htmljinja a python template engine)
-au BufRead,BufNewFile *.twig set filetype=htmljinja
 
 map <up> <nop>
 map <down> <nop>
@@ -67,7 +75,8 @@ imap <right> <nop>
 
 " Files format
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
-au BufNewFile,BufRead *.twig :set ft=html " twig are HTML
+"TWIG coloration (use htmljinja a python template engine)
+au BufRead,BufNewFile *.twig set filetype=htmljinja
 
 
 
@@ -76,4 +85,3 @@ au BufNewFile,BufRead *.twig :set ft=html " twig are HTML
 " Bind ctrl + space for completion
 :imap <C-Space> <C-X><C-O>
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-
