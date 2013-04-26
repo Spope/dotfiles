@@ -68,9 +68,10 @@ let mapleader=","
 map <F2> :NERDTreeToggle<CR>
 
 " CtrlP config
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|cache|logs|vendor)$'
-
-
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|data\|logs\|cache\|vendor\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
 
 map <up> <nop>
 map <down> <nop>
