@@ -13,7 +13,10 @@ set scrolloff=3       " Affiche un mini de 3 lignes autor du curseur
 
 set encoding=utf-8
 set hi=1000           " Historique des commandes
-
+set guioptions-=m     "remove menu bar
+set guioptions-=T     "remove toolbar
+set guioptions-=r     "remove right-hand scroll bar
+set guioptions-=L     "remove left-hand scroll bar
 
 " Active la coloration syntaxique
 syntax enable
