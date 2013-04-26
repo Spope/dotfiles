@@ -67,6 +67,11 @@ let mapleader=","
 "Open nerdtree on F2
 map <F2> :NERDTreeToggle<CR>
 
+" CtrlP config
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|cache|logs|vendor)$'
+
+
+
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
