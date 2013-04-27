@@ -73,6 +73,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
+" Indent line carachter displayd
+let g:indentLine_char = '┆'
 
 " Key binding
 nnoremap <C-h> <C-w>h
