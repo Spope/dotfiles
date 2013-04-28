@@ -17,6 +17,10 @@ set guioptions-=m     "remove menu bar
 set guioptions-=T     "remove toolbar
 set guioptions-=r     "remove right-hand scroll bar
 set guioptions-=L     "remove left-hand scroll bar
+set list
+set listchars=trail:⋅,nbsp:⋅
+" Non text chars color
+hi NonText ctermfg=7 guifg=gray
 
 " Active la coloration syntaxique
 syntax enable
@@ -51,7 +55,8 @@ set backspace=indent,eol,start
 set hidden
 
 let molokai_original=1
-colorscheme molokai
+colorscheme mustang
+"colorscheme molokai
 if has("win32") || has("win16")
     set guifont=Consolas:h10
 else
