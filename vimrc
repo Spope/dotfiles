@@ -10,6 +10,8 @@ call pathogen#infect()
 set title             " Met à jour le titre de la fenetre
 set number            " line number
 set ruler             " Affice la position du curseur
+" set colorcolumn=80    " Affiche la regle a 80 characteres
+" highlight ColorColumn guibg=Black
 set wrap              " Affiche les lignes trop longues sur plusieurs ligne
 set scrolloff=3       " Affiche un mini de 3 lignes autor du curseur
 
