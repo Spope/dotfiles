@@ -17,8 +17,6 @@ set guioptions-=m     "remove menu bar
 set guioptions-=T     "remove toolbar
 set guioptions-=r     "remove right-hand scroll bar
 set guioptions-=L     "remove left-hand scroll bar
-set list
-set listchars=trail:⋅,nbsp:⋅
 " Non text chars color
 hi NonText ctermfg=7 guifg=gray
 
@@ -72,14 +70,8 @@ let mapleader=","
 "Open nerdtree on F2
 map <F2> :NERDTreeToggle<CR>
 
-" CtrlP config
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|data\|logs\|cache\|vendor\|tmp$',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
-  \ }
-
 " Indent line carachter displayd
-let g:indentLine_char = '┆'
+let g:indentLine_char = '|'
 
 " Key binding
 nnoremap <C-h> <C-w>h
