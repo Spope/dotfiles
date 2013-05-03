@@ -1,0 +1,563 @@
+{
+	"folder_history":
+	[
+		"/home/spope/public_html/siteenscene",
+		"/home/spope/public_html/cgsi",
+		"/home/spope/public_html/bookmarksv2",
+		"/home/spope/public_html/dailybrunch",
+		"/home/spope/public_html/prestashopCustomer",
+		"/home/spope/public_html/bookmarksv3"
+	],
+	"last_window_id": 11,
+	"settings":
+	{
+		"new_window_height": 0.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 194.0,
+				"selected_items":
+				[
+					[
+						"key",
+						"Preferences: Key Bindings - Default"
+					],
+					[
+						"package remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"pakage rem",
+						"Package Control: Remove Package"
+					],
+					[
+						"sett",
+						"Preferences: Settings - User"
+					],
+					[
+						"settin",
+						"Preferences: Settings - Default"
+					],
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"remove pac",
+						"Package Control: Remove Package"
+					],
+					[
+						"Package Control: ",
+						"Package Control: Remove Package"
+					]
+				],
+				"width": 579.0
+			},
+			"console":
+			{
+				"height": 0.0
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/spope/public_html/bookmarksv2/web/public/js/bookmarks.js",
+				"/home/spope/public_html/bookmarksv2/web/public/js/views/categories.js/categories.js",
+				"/home/spope/public_html/cgsi/src/Cgsi/SchoolBundle/Controller/SchoolController.php",
+				"/home/spope/public_html/cgsi/src/Cgsi/SchoolBundle/Controller/SchoolSpecialOfferController.php",
+				"/home/spope/public_html/dailybrunch/override/classes/Customer.php",
+				"/home/spope/public_html/dailybrunch/config/defines.inc.php",
+				"/home/spope/public_html/prestashopCustomer/source.php",
+				"/home/spope/public_html/prestashopCustomer/PrestaBridge.php",
+				"/media/PENDRIVE/moulinetteImport/source.php",
+				"/home/spope/.config/sublime-text-2/Packages/SublimeLinter/Default (Linux).sublime-keymap",
+				"/home/spope/public_html/prestashopCustomer/config/config.php",
+				"/home/spope/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+				"/home/spope/Bureau/mercanet/certif.fr.079080237500010.php",
+				"/home/spope/Bureau/mercanet/certif.fr.079080237500010",
+				"/home/spope/public_html/bookmarksv2/web/public/js/app.js",
+				"/home/spope/public_html/bookmarksv2/src/Spope/BookmarksBundle/Resources/views/index.html.twig",
+				"/home/spope/public_html/bookmarksv2/src/Spope/BookmarksBundle/Controller/CategoryController.php",
+				"/home/spope/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+				"/home/spope/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+				"/home/spope/.config/sublime-text-2/Packages/Color Scheme - Default/Monokai.tmTheme",
+				"/home/spope/.config/sublime-text-2/Packages/User/BracketHighlighter.sublime-settings",
+				"/home/spope/.config/sublime-text-2/Packages/BracketHighlighter/BracketHighlighter.sublime-settings",
+				"/home/spope/.config/sublime-text-2/Packages/User/Package Control.sublime-settings"
+			],
+			"find":
+			{
+				"height": 37.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"stack",
+					"switch",
+					"tab",
+					"	",
+					"tab",
+					"alt+shift+2",
+					"border",
+					"quote_scope",
+					"alt+shift+2",
+					"shift+alt+2"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 33.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					],
+					[
+						1,
+						0,
+						2,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					0.5,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+					[
+						"appjs",
+						"web/public/js/app.js"
+					],
+					[
+						"indextw",
+						"src/Spope/BookmarksBundle/Resources/views/index.html.twig"
+					],
+					[
+						"categorycontr",
+						"src/Spope/BookmarksBundle/Controller/CategoryController.php"
+					],
+					[
+						"bookmak",
+						"web/public/js/bookmarks.js"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 500.0,
+				"selected_items":
+				[
+				],
+				"width": 380.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 257.0,
+			"status_bar_visible": true
+		},
+		"new_window_width": 0.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+			],
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 56.0,
+				"selected_items":
+				[
+					[
+						"brow",
+						"Preferences: Browse Packages"
+					],
+					[
+						"key",
+						"Preferences: Key Bindings - Default"
+					],
+					[
+						"package remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"pakage rem",
+						"Package Control: Remove Package"
+					],
+					[
+						"sett",
+						"Preferences: Settings - User"
+					],
+					[
+						"settin",
+						"Preferences: Settings - Default"
+					],
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"remove pac",
+						"Package Control: Remove Package"
+					],
+					[
+						"Package Control: ",
+						"Package Control: Remove Package"
+					]
+				],
+				"width": 507.0
+			},
+			"console":
+			{
+				"height": 0.0
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/spope/public_html/siteenscene/datas.php",
+				"/home/spope/public_html/cgsi/src/Cgsi/VitaeBundle/Form/VitaeExperienceType.php",
+				"/home/spope/public_html/cgsi/src/Cgsi/VitaeBundle/Controller/ApiVitaeController.php",
+				"/home/spope/public_html/cgsi/web/public/js/Apps/View/Vitae/EditAboutView.js",
+				"/home/spope/public_html/cgsi/src/Cgsi/VitaeBundle/Entity/VitaeExperience.php",
+				"/home/spope/public_html/cgsi/web/public/js/Apps/View/Vitae/ExperiencesListView.js",
+				"/home/spope/public_html/cgsi/src/Cgsi/VitaeBundle/Resources/views/Vitae/show.html.twig",
+				"/home/spope/public_html/cgsi/web/public/js/Apps/View/Vitae/AboutView.js",
+				"/home/spope/public_html/cgsi/web/public/js/Apps/View/Vitae/EditExperienceView.js",
+				"/home/spope/public_html/cgsi/src/Cgsi/SchoolBundle/Resources/views/School/search_form.html.twig",
+				"/home/spope/public_html/cgsi/src/Cgsi/VitaeBundle/Controller/ApiExperienceController.php",
+				"/home/spope/.config/sublime-text-2/Packages/Default/Preferences (Linux).sublime-settings",
+				"/home/spope/public_html/cgsi/src/Cgsi/SchoolBundle/Controller/SchoolController.php",
+				"/home/spope/public_html/cgsi/app/config/config_dev.yml",
+				"/home/spope/public_html/cgsi/.gitignore",
+				"/home/spope/public_html/cgsi/src/Cgsi/VitaeBundle/Form/VitaeType.php",
+				"/home/spope/public_html/cgsi/app/config/parameters.yml",
+				"/home/spope/public_html/cgsi/src/Cgsi/VitaeBundle/Controller/VitaeController.php",
+				"/home/spope/public_html/bookmarksv2/web/public/js/bookmarks.js",
+				"/home/spope/public_html/bookmarksv2/web/public/js/views/categories.js/categories.js",
+				"/home/spope/public_html/cgsi/src/Cgsi/SchoolBundle/Controller/SchoolSpecialOfferController.php",
+				"/home/spope/public_html/dailybrunch/override/classes/Customer.php",
+				"/home/spope/public_html/dailybrunch/config/defines.inc.php",
+				"/home/spope/public_html/prestashopCustomer/source.php",
+				"/home/spope/public_html/prestashopCustomer/PrestaBridge.php",
+				"/media/PENDRIVE/moulinetteImport/source.php",
+				"/home/spope/.config/sublime-text-2/Packages/SublimeLinter/Default (Linux).sublime-keymap",
+				"/home/spope/public_html/prestashopCustomer/config/config.php",
+				"/home/spope/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+				"/home/spope/Bureau/mercanet/certif.fr.079080237500010.php",
+				"/home/spope/Bureau/mercanet/certif.fr.079080237500010",
+				"/home/spope/public_html/bookmarksv2/web/public/js/app.js",
+				"/home/spope/public_html/bookmarksv2/src/Spope/BookmarksBundle/Resources/views/index.html.twig",
+				"/home/spope/public_html/bookmarksv2/src/Spope/BookmarksBundle/Controller/CategoryController.php",
+				"/home/spope/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+				"/home/spope/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+				"/home/spope/.config/sublime-text-2/Packages/Color Scheme - Default/Monokai.tmTheme",
+				"/home/spope/.config/sublime-text-2/Packages/User/BracketHighlighter.sublime-settings",
+				"/home/spope/.config/sublime-text-2/Packages/BracketHighlighter/BracketHighlighter.sublime-settings",
+				"/home/spope/.config/sublime-text-2/Packages/User/Package Control.sublime-settings"
+			],
+			"find":
+			{
+				"height": 37.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"î",
+					"É",
+					"Î",
+					"ê",
+					"œ",
+					"â",
+					"û",
+					"’",
+					"€",
+					"ô",
+					"à",
+					"è",
+					"é",
+					"ongoing",
+					"end_date",
+					"end_",
+					"start_date",
+					"start_date\n\nstart_date",
+					"$orCate",
+					"typea",
+					"stack",
+					"switch",
+					"tab",
+					"	",
+					"tab",
+					"alt+shift+2",
+					"border",
+					"quote_scope",
+					"alt+shift+2",
+					"shift+alt+2"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"&icirc;",
+					"&Eacute;",
+					"&Icirc;",
+					"&ecirc;",
+					"oe",
+					"&acirc;",
+					"&ucirc;",
+					"'",
+					"&euro;",
+					"&ocirc;",
+					"&agrave;",
+					"&egrave;",
+					"&eacute;"
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"path": "/home/spope/public_html/cgsi"
+				},
+				{
+					"path": "/home/spope/public_html/siteenscene"
+				}
+			],
+			"groups":
+			[
+				{
+					"sheets":
+					[
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 33.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"position": "0,1,0,0,0,0,0,0,0,1366,768",
+			"replace":
+			{
+				"height": 66.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+					[
+						"editexper",
+						"web/public/js/Apps/View/Vitae/EditExperienceView.js"
+					],
+					[
+						"apiexperie",
+						"src/Cgsi/VitaeBundle/Controller/ApiExperienceController.php"
+					],
+					[
+						"configdev",
+						"app/config/config_dev.yml"
+					],
+					[
+						"",
+						".gitignore"
+					],
+					[
+						"schoolcontro",
+						"src/Cgsi/SchoolBundle/Controller/SchoolController.php"
+					],
+					[
+						"searchform",
+						"src/Cgsi/SchoolBundle/Resources/views/School/search_form.html.twig"
+					],
+					[
+						"vitaeexperien",
+						"src/Cgsi/VitaeBundle/Entity/VitaeExperience.php"
+					],
+					[
+						"parameter",
+						"app/config/parameters.yml"
+					],
+					[
+						"apivitaecontroller",
+						"src/Cgsi/VitaeBundle/Controller/ApiVitaeController.php"
+					],
+					[
+						"vitaecontre",
+						"src/Cgsi/VitaeBundle/Controller/VitaeController.php"
+					],
+					[
+						"appjs",
+						"web/public/js/app.js"
+					],
+					[
+						"indextw",
+						"src/Spope/BookmarksBundle/Resources/views/index.html.twig"
+					],
+					[
+						"categorycontr",
+						"src/Spope/BookmarksBundle/Controller/CategoryController.php"
+					],
+					[
+						"bookmak",
+						"web/public/js/bookmarks.js"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 500.0,
+				"selected_items":
+				[
+				],
+				"width": 380.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 240.0,
+			"status_bar_visible": true,
+			"window_id": 11,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

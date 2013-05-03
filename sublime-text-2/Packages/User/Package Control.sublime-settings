@@ -1,0 +1,16 @@
+{
+	"installed_packages":
+	[
+		"Alignment",
+		"BracketHighlighter",
+		"Clipboard History",
+		"DocBlockr",
+		"LESS",
+		"Origami",
+		"Package Control",
+		"SublimeLinter",
+		"Symfony2 Snippets",
+		"SymfonyCommander",
+		"Theme - Soda"
+	]
+}
