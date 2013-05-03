@@ -4,10 +4,12 @@ set nocompatible
 " Activation de pathogen. Doit rester en haut de .vimrc
 call pathogen#infect()
 
-" -- Affichage
+""""""""""""""""""
+" Affichage
+""""""""""""""""""
 set title             " Met à jour le titre de la fenetre
 set number            " line number
-set ruler             " Affiche la position du curseur
+set ruler             " Affice la position du curseur
 set wrap              " Affiche les lignes trop longues sur plusieurs ligne
 set scrolloff=3       " Affiche un mini de 3 lignes autor du curseur
 
@@ -17,6 +19,7 @@ set guioptions-=m     "remove menu bar
 set guioptions-=T     "remove toolbar
 set guioptions-=r     "remove right-hand scroll bar
 set guioptions-=L     "remove left-hand scroll bar
+
 " Non text chars color
 hi NonText ctermfg=7 guifg=gray
 
@@ -60,7 +63,7 @@ if has("win32") || has("win16")
 else
     set guifont=Monospace
 endif
-" Monospace
+
 " set background=dark
 " colorscheme solarized
 
@@ -73,12 +76,27 @@ map <F2> :NERDTreeToggle<CR>
 " Indent line carachter displayd
 let g:indentLine_char = '|'
 
+"""""""""""""""""
 " Key binding
+"""""""""""""""""
+" Split naviguation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Indent re-selection
+vnoremap < <gv
+vnoremap > >gv
+
+" Improve up/down movement on wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" I can type :help on my own, thanks.
+noremap <F1> <Esc>
+
+" Where do you think you are !
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -92,8 +110,6 @@ imap <right> <nop>
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
 "TWIG coloration (use htmljinja a python template engine)
 au BufRead,BufNewFile *.twig set filetype=htmljinja
-
-
 
 
 "HTML
