@@ -74,6 +74,7 @@ let mapleader=","
 
 "Open nerdtree on F2
 map <F2> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " Indent line carachter displayd
 let g:indentLine_char = '|'
