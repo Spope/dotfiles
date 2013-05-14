@@ -117,7 +117,7 @@ $this->getRequest()->getSession();
 `sfsetflash`
 
 ``` php
-this->get('session')->setFlash('notice', 'message');
+$this->get('session')->getFlashBag()->add('notice', 'message');
 ```
 
 ### Forms ###
@@ -231,6 +231,26 @@ class repositoryClass
 }
 ```
 
+`sfdocumentClass`
+
+``` php
+namespace VendorName\BundleNameBundle\Document;
+
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+* @MongoDB\Document(collection="repositoryClass", repositoryClass="VendorName\BundleNameBundle\Repository\repositoryClassRepository")
+*/
+class repositoryClass
+{
+    /**
+    * @MongoDB\Id
+    */
+    protected $id;
+}
+```
+
 `sfidcolumn`
 
 ``` php
@@ -257,11 +277,91 @@ class repositoryClass
  */
 ```
 
-`sfstextcolumn`
+`sftextcolumn`
 
 ``` php
 /**
  * @ORM\Column(type="text")
+ */
+```
+
+`sfintegercolumn`
+
+``` php
+/**
+ * @ORM\Column(type="integer")
+ */
+```
+
+`sfbooleancolumn`
+
+``` php
+/**
+ * @ORM\Column(type="boolean")
+ */
+```
+
+`sfsmallintcolumn`
+
+``` php
+/**
+ * @ORM\Column(type="smallint")
+ */
+```
+
+`sfbigintcolumn`
+
+``` php
+/**
+ * @ORM\Column(type="bigint")
+ */
+```
+
+`sfdatetimecolumn`
+
+``` php
+/**
+ * @ORM\Column(type="datetime")
+ */
+```
+
+`sfdatecolumn`
+
+``` php
+/**
+ * @ORM\Column(type="date")
+ */
+```
+
+`sftimecolumn`
+
+``` php
+/**
+ * @ORM\Column(type="time")
+ */
+```
+
+`sffloatcolumn`
+
+``` php
+/**
+ * @ORM\Column(type="float")
+ */
+```
+
+`sfarraycolumn`
+
+``` php
+/**
+ * @ORM\Column(type="array")
+ */
+```
+
+`sfobjectcolumn`
+
+``` php
+/**
+ * @ORM\Column(type="object")
  */
 ```
 
@@ -304,6 +404,15 @@ class ExtensionNameExtension extends \Twig_Extension
         return array();
     }
 }
+```
+
+`sftwigform`
+
+``` html
+<form class="${1}" action="{{ ${2:path('${3}')} }}" method="${4:post}" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" value="${5:Submit}" /> 
+</form>
 ```
 
 ### YAML ###
