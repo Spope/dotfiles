@@ -92,6 +92,8 @@ nnoremap <C-l> <C-w>l
 vnoremap < <gv
 vnoremap > >gv
 
+nnoremap <CR> :nohlsearch<cr>
+
 " Improve up/down movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
