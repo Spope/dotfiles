@@ -15,6 +15,7 @@ set ruler             " Affice la position du curseur
 set wrap              " Affiche les lignes trop longues sur plusieurs ligne
 set scrolloff=3       " Affiche un mini de 3 lignes autor du curseur
 
+set t_Co=256          " 256 colors
 set encoding=utf-8
 set hi=1000           " Historique des commandes
 set guioptions-=m     "remove menu bar
