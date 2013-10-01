@@ -96,7 +96,8 @@ vnoremap > >gv
 
 nnoremap <CR> :nohlsearch<cr>
 
-imap <C-c> <CR><Esc>O " map 2 line break + cursor in middle;
+" map 2 line break + cursor in middle;
+imap <C-c> <CR><Esc>O 
 
 " Improve up/down movement on wrapped lines
 nnoremap j gj
