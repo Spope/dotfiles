@@ -126,19 +126,3 @@ au BufRead,BufNewFile *.twig set filetype=htmljinja
 " Bind ctrl + space for completion
 :imap <C-Space> <C-X><C-O>
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-
-" FOLDING
-function! JavaScriptFold() 
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
-au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
-
-let php_folding = 1
