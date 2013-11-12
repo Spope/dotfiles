@@ -9,8 +9,8 @@ On Windows :
 * Delete existing _vimrc and vimfiles
 * Launch a cmd.exe as an administrator
 
-    mklink "c:\Users\USERNAME\.vimrc" "C:\Users\USERNAME\dotefiles\vimrc"
-    mklink /D "c:\Users\USERNAME\vimfiles" "C:\Users\USERNAME\dotefiles\vim"
+    mklink "c:\Users\USERNAME\.vimrc" "C:\Users\USERNAME\dotfiles\vimrc"
+    mklink /D "c:\Users\USERNAME\vimfiles" "C:\Users\USERNAME\dotfiles\vim"
 
 ## Sublime Text 2 configuration
 
