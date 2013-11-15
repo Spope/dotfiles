@@ -15,3 +15,8 @@ On Windows :
 ## Sublime Text 2 configuration
 
     ln -s ~/dotfiles/sublime-text-2/ ~/.config/sublime-text-2
+
+## Preferences
+
+    ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+    ln -s ~/dotfiles/.gitconfig ~/.gitconfig
