@@ -21,10 +21,10 @@ On Linux:
     To be defined
 
 On Windows:
-
 * Delete folders
 * Launch a cmd.exe **as an administrator**
 
+<b></b>
 
     mklink /D "C:\Users\USERNAME\AppData\Roaming\Sublime Text 3\Installed Packages" "C:\Users\USERNAME\dotfiles\sublime-text-3\InstalledPackages"
 
