@@ -7,14 +7,27 @@
 
 On Windows :
 * Delete existing _vimrc and vimfiles
-* Launch a cmd.exe as an administrator
+* Launch a cmd.exe **as an administrator**
+
 
     mklink "c:\Users\USERNAME\.vimrc" "C:\Users\USERNAME\dotfiles\vimrc"
     mklink /D "c:\Users\USERNAME\vimfiles" "C:\Users\USERNAME\dotfiles\vim"
 
-## Sublime Text 2 configuration
+## Sublime Text 3 configuration
 
-    ln -s ~/dotfiles/sublime-text-2/ ~/.config/sublime-text-2
+On Linux:
+
+    To be defined
+
+On Windows:
+
+* Delete folders
+* Launch a cmd.exe **as an administrator**
+
+
+    mklink /D "C:\Users\USERNAME\AppData\Roaming\Sublime Text 3\Installed Packages" "C:\Users\USERNAME\dotfiles\sublime-text-3\InstalledPackages"
+
+    mklink /D "c:\Users\USERNAME\AppData\Roaming\Sublime Text 3\Packages" "c:\Users\USERNAME\dotfiles\sublime-text-3\Packages"
 
 ## Preferences
 

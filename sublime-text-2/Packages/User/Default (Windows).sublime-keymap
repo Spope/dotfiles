@@ -1,5 +1,0 @@
-[
-    { "keys": ["f2"], "command": "toggle_side_bar" },
-    { "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
-    { "keys": ["ctrl+keypad0"], "command": "reset_font_size" }
-]
