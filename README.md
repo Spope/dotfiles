@@ -18,7 +18,8 @@ On Windows :
 
 On Linux:
 
-    To be defined
+    ln -s ~/dotfiles/sublime-text-3/InstalledPackages/ ~/.config/sublime-text-3/Installed\ Packages
+    ln -s ~/dotfiles/sublime-text-3/Packages/ ~/.config/sublime-text-3/Packages
 
 On Windows:
 * Delete folders
