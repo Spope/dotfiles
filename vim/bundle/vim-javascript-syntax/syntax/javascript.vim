@@ -1,13 +1,13 @@
 " Vim syntax file
-" Language:     JavaScript
-" Maintainer:   Jose Elera Campana <https://github.com/jelera>
-" Last Change:  September, 17 2013
-" Version:      0.8.0
-" Changes:      Go to https://github.com/jelera/vim-javascript-syntax for
-"               recent changes.
-" Credits:      Zhao Yi, Claudio Fleiner, Scott Shattuck (This file is based
-"               on their hard work), gumnos (From the #vim IRC Channel in
-"               Freenode)
+"      Language: JavaScript
+"    Maintainer: Jose Elera Campana <https://github.com/jelera>
+" Last Modified: Mon 09 Dec 2013 01:20:46 PM CST
+"       Version: 0.8.1
+"       Changes: Go to https://github.com/jelera/vim-javascript-syntax for
+"                recent changes.
+"       Credits: Zhao Yi, Claudio Fleiner, Scott Shattuck (This file is based
+"                on their hard work), gumnos (From the #vim IRC Channel in
+"                Freenode)
 
 if !exists("main_syntax")
 	if version < 600
@@ -34,7 +34,7 @@ endif
 syntax sync fromstart
 
 "" syntax coloring for Node.js shebang line
-syn match shebang "^#!.*"
+syntax match shebang "^#!.*"
 hi link shebang Comment
 
 " Statement Keywords {{{
@@ -57,10 +57,10 @@ syntax keyword javaScriptExceptions     try catch throw finally Error EvalError 
 syntax keyword javaScriptReserved       abstract enum int short boolean export interface static byte extends long super char final native synchronized class float package throws const goto private transient debugger implements protected volatile double import public
 "}}}
 " Comments {{{
-syn keyword javaScriptCommentTodo      TODO FIXME XXX TBD contained
-syn match   javaScriptLineComment      "\/\/.*" contains=@Spell,javaScriptCommentTodo
-syn match   javaScriptCommentSkip      "^[ \t]*\*\($\|[ \t]\+\)"
-syn region  javaScriptComment          start="/\*"  end="\*/" contains=@Spell,javaScriptCommentTodo
+syntax keyword javaScriptCommentTodo      TODO FIXME XXX TBD contained
+syntax match   javaScriptLineComment      "\/\/.*" contains=@Spell,javaScriptCommentTodo
+syntax match   javaScriptCommentSkip      "^[ \t]*\*\($\|[ \t]\+\)"
+syntax region  javaScriptComment          start="/\*"  end="\*/" contains=@Spell,javaScriptCommentTodo
 "}}}
 " JSDoc support {{{
 if !exists("javascript_ignore_javaScriptdoc")
@@ -69,8 +69,8 @@ if !exists("javascript_ignore_javaScriptdoc")
 	" syntax coloring for JSDoc comments (HTML)
 	"unlet b:current_syntax
 
-	syntax region javaScriptDocComment        matchgroup=javaScriptComment start="/\*\*\s*$"  end="\*/" contains=javaScriptDocTags,javaScriptCommentTodo,@javaScriptHtml,@Spell fold
-	syntax match  javaScriptDocTags           contained "@\(param\|argument\|returns\=\|requires\|exception\|throws\|type\|class\|extends\|see\|link\|member\|module\|method\|title\|namespace\|optional\|default\|base\|file\)\>" nextgroup=javaScriptDocParam,javaScriptDocSeeTag skipwhite
+	syntax region javaScriptDocComment        matchgroup=javaScriptComment start="/\*\*\s*$"  end="\*/" contains=javaScriptDocTags,javaScriptCommentTodo,@javaScriptHtml,jsInJsdocExample,@Spell fold
+	syntax match  javaScriptDocTags           contained "@\(param\|argument\|returns\=\|requires\|exception\|throws\|type\|class\|extends\|see\|link\|member\|module\|method\|title\|namespace\|name\|memberof\|exports\|callback\|typedef\|property\|optional\|default\|base\|file\)\>" nextgroup=javaScriptDocParam,javaScriptDocSeeTag skipwhite
 	syntax match  javaScriptDocTags           contained "@\(beta\|deprecated\|description\|fileoverview\|author\|license\|version\|constructor\|private\|protected\|final\|ignore\|addon\|exec\)\>"
 	syntax match  javaScriptDocParam          contained "\%(#\|\w\|\.\|:\|\/\)\+"
 	syntax region javaScriptDocSeeTag         contained matchgroup=javaScriptDocSeeTag start="{" end="}" contains=javaScriptDocTags
@@ -80,13 +80,13 @@ endif
 	syntax case match
 "}}}
 " Strings, Numbers and Regex Highlight {{{
-syn match   javaScriptSpecial          "\\\d\d\d\|\\."
-syn region  javaScriptString           start=+"+  skip=+\\\\\|\\"+  end=+"\|$+	contains=javaScriptSpecial,@htmlPreproc
-syn region  javaScriptString           start=+'+  skip=+\\\\\|\\'+  end=+'\|$+	contains=javaScriptSpecial,@htmlPreproc
+syntax match   javaScriptSpecial          "\\\d\d\d\|\\."
+syntax region  javaScriptString           start=+"+  skip=+\\\\\|\\"+  end=+"\|$+	contains=javaScriptSpecial,@htmlPreproc
+syntax region  javaScriptString           start=+'+  skip=+\\\\\|\\'+  end=+'\|$+	contains=javaScriptSpecial,@htmlPreproc
 
-syn match   javaScriptSpecialCharacter "'\\.'"
-syn match   javaScriptNumber           "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
-syn region  javaScriptRegexpString     start=+/[^/*]+me=e-1 skip=+\\\\\|\\/+ end=+/[gim]\{0,2\}\s*$+ end=+/[gim]\{0,2\}\s*[;.,)\]}]+me=e-1 contains=@htmlPreproc oneline
+syntax match   javaScriptSpecialCharacter "'\\.'"
+syntax match   javaScriptNumber           "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
+syntax region  javaScriptRegexpString     start=+/[^/*]+me=e-1 skip=+\\\\\|\\/+ end=+/[gim]\{0,2\}\s*$+ end=+/[gim]\{0,2\}\s*[;.,)\]}]+me=e-1 contains=@htmlPreproc oneline
 syntax match   javaScriptFloat          /\<-\=\%(\d\+\.\d\+\|\d\+\.\|\.\d\+\)\%([eE][+-]\=\d\+\)\=\>/
 "}}}
 "  DOM, Browser and Ajax Support   {{{
@@ -172,25 +172,25 @@ endif
 "}}}
 " Function and arguments highlighting {{{
 syntax keyword javaScriptFuncKeyword     function contained
-syntax region  javascriptFuncExp         start=/\w\+\s\==\s\=function/ end="\([^)]*\)" contains=javascriptFuncEq,javascriptFuncKeyword,javascriptFuncArg keepend
+syntax region  javaScriptFuncExp         start=/\w\+\s\==\s\=function\>/ end="\([^)]*\)" contains=javaScriptFuncEq,javaScriptFuncKeyword,javaScriptFuncArg keepend
 syntax match   javaScriptFuncArg         "\(([^()]*)\)" contains=javaScriptParens,javaScriptFuncComma contained
 syntax match   javaScriptFuncComma       /,/ contained
-syntax match   javascriptFuncEq          /=/ contained
-syntax region  javaScriptFuncDef         start="function" end="\([^)]*\)" contains=javaScriptFuncKeyword,javaScriptFuncArg keepend
+syntax match   javaScriptFuncEq          /=/ contained
+syntax region  javaScriptFuncDef         start="\<function\>" end="\([^)]*\)" contains=javaScriptFuncKeyword,javaScriptFuncArg keepend
 "}}}
 " Braces, Parens, symbols, colons {{{
-syn match javaScriptBraces       "[{}\[\]]"
-syn match javaScriptParens       "[()]"
-syn match javaScriptOpSymbols    "=\{1,3}\|!==\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
-syn match javaScriptEndColons    "[;,]"
-syn match javaScriptLogicSymbols "\(&&\)\|\(||\)"
+syntax match javaScriptBraces       "[{}\[\]]"
+syntax match javaScriptParens       "[()]"
+syntax match javaScriptOpSymbols    "=\{1,3}\|!==\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
+syntax match javaScriptEndColons    "[;,]"
+syntax match javaScriptLogicSymbols "\(&&\)\|\(||\)"
 "}}}
 " JavaScriptFold Function {{{
 
 function! JavaScriptFold()
 	setl foldmethod=syntax
 	setl foldlevelstart=1
-	syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+	syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 endfunction
 
 " }}}
@@ -276,10 +276,10 @@ if version >= 508 || !exists("did_javascript_syn_inits")
 
 	HiLink javaScriptFuncKeyword            Function
 	HiLink javaScriptFuncDef                PreProc
-	HiLink javascriptFuncExp                Title
+	HiLink javaScriptFuncExp                Title
 	HiLink javaScriptFuncArg               	Special
-	HiLink javascriptFuncComma              Operator
-	HiLink javascriptFuncEq                 Operator
+	HiLink javaScriptFuncComma              Operator
+	HiLink javaScriptFuncEq                 Operator
 
 	HiLink javaScriptHtmlEvents             Constant
 	HiLink javaScriptHtmlElemProperties     Label
@@ -302,3 +302,5 @@ let b:current_syntax = "javascript"
 if main_syntax == 'javascript'
 	unlet main_syntax
 endif
+syntax region jsInJsdocExample matchgroup=Snip start="^\s*\* @example" end="\(^\s*\* [^[:space:]]\)\@=" containedin=@javaScriptComment contains=@javaScriptAll
+hi link Snip SpecialComment
