@@ -3,6 +3,7 @@ set nocompatible
 
 " Activation de pathogen. Doit rester en haut de .vimrc
 call pathogen#infect()
+silent! call pathogen#helptags()
 
 """"""""""""""""""
 " Affichage
