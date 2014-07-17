@@ -23,6 +23,7 @@ set guioptions-=m     "remove menu bar
 set guioptions-=T     "remove toolbar
 set guioptions-=r     "remove right-hand scroll bar
 set guioptions-=L     "remove left-hand scroll bar
+set autoread          " Set to auto read when a file is changed from the outside
 
 " Non text chars color
 hi NonText ctermfg=7 guifg=gray
@@ -66,6 +67,14 @@ if has("win32") || has("win16")
     set guifont=Consolas:h10
 else
     set guifont=Monospace
+endif
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+else
+    set wildignore+=.git\*,.hg\*,.svn\*
 endif
 
 " set background=dark
