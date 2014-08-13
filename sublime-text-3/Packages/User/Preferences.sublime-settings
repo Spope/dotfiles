@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Mustang Color Scheme/Mustang.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"draw_white_space": "all",
 	"file_exclude_patterns":
 	[
@@ -34,7 +34,7 @@
 	"font_size": 10.0,
 	"ignored_packages":
 	[
-		"Theme - Soda"
+		"Vintage"
 	],
 	"rulers":
 	[
