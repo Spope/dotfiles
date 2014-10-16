@@ -113,6 +113,10 @@ imap <C-c> <CR><Esc>O
 nnoremap j gj
 nnoremap k gk
 
+" switch between tab
+nnoremap tn :tabn<CR>
+nnoremap tp :tabp<CR>
+
 " I can type :help on my own, thanks.
 noremap <F1> <Esc>
 
