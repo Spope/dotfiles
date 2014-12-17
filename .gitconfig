@@ -30,7 +30,7 @@
     br = branch
     co = checkout
     df = diff
-    lg = log
+    lg = log --graph --oneline --decorate
     merge = merge --no-commit
 [merge]
     conflictstyle = diff3
