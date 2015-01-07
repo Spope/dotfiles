@@ -103,9 +103,3 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 ##END OF DEFAULT BASHRC
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
-alias projects="ssh projects@spope.fr"

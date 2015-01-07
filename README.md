@@ -32,6 +32,10 @@ On Windows:
 
 ## Preferences
 
-    ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+    On the existing .bashrc, add
+
+    if [ -f ~/dotfiles/.bash_profile ]; then
+        source ~/dotfiles/.bash_profile
+    fi
+
     ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-    ln -s ~/dotfiles/.bashrc ~/.bashrc
