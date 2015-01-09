@@ -13,7 +13,6 @@ export PS1="\n\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tp
 export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
 
 
-
 alias ll='ls -al'
 
 alias grep='grep --color=auto'

@@ -60,7 +60,11 @@ set backspace=indent,eol,start
 " Cache les fichiers lors de l'ouverture d'autre fichiers
 set hidden
 
-let molokai_original=1
+"set background=dark
+" colorscheme solarized
+
+"let molokai_original=1
+"colorscheme base16-ocean
 colorscheme mustang
 "colorscheme molokai
 if has("win32") || has("win16")
@@ -76,9 +80,6 @@ if has("win16") || has("win32")
 else
     set wildignore+=.git\*,.hg\*,.svn\*
 endif
-
-" set background=dark
-" colorscheme solarized
 
 " Leader map for plugins
 let mapleader=","
