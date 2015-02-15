@@ -70,7 +70,7 @@ colorscheme mustang
 if has("win32") || has("win16")
     set guifont=Consolas:h10
 else
-    set guifont=Monospace
+    set guifont=Menlo:h13
 endif
 
 " Ignore compiled files
@@ -96,6 +96,13 @@ let g:indentLine_char = '|'
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
+
+"CtrlP
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|cache|vendor)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 """""""""""""""""
 " Key binding
