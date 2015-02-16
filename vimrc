@@ -146,3 +146,13 @@ au BufRead,BufNewFile *.twig set filetype=htmljinja
 " Bind ctrl + space for completion
 :imap <C-Space> <C-X><C-O>
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
+function! Paste()
+    normal! "ap
+    normal! vjjjjjjjj
+endfunction
+
+function! Getter(lowCase, upperCase) range
+    execute( a:firstline.",".a:lastline."s/Alone/".a:upperCase."/g")
+    execute( a:firstline.",".a:lastline."s/alone/".a:lowCase."/g")
+endfunction
