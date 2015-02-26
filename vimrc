@@ -70,7 +70,13 @@ colorscheme mustang
 if has("win32") || has("win16")
     set guifont=Consolas:h10
 else
-    set guifont=Menlo:h13
+    if system('uname')=~'Darwin'
+        "OSX
+        set guifont=Menlo:h13
+    else
+        "Linux
+        set guifont=Monospace
+    endif
 endif
 
 " Ignore compiled files
@@ -92,14 +98,19 @@ let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
 " Indent line carachter displayd
 let g:indentLine_char = '|'
 
-"php-doc : ctrl+p
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
+"php-doc : ctrl+h
+inoremap <C-H> <ESC>:call PhpDocSingle()<CR>i 
+nnoremap <C-H> :call PhpDocSingle()<CR> 
+vnoremap <C-H> :call PhpDocRange()<CR> 
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+map <C-I> :CtrlPBuffer<CR>
 
 "CtrlP
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|cache|vendor)$',
+  \ 'dir':  '\v[\/](node_modules|vendor)|(\.(git|hg|svn))$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
