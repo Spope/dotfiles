@@ -110,7 +110,7 @@ map <C-I> :CtrlPBuffer<CR>
 
 "CtrlP
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|vendor)|(\.(git|hg|svn))$',
+  \ 'dir':  '\v[\/](node_modules|vendor|cache)|(\.(git|hg|svn))$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
