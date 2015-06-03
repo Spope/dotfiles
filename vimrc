@@ -88,7 +88,7 @@ else
 endif
 
 " Leader map for plugins
-let mapleader=","
+let mapleader="\<Space>"
 
 "Open nerdtree on F2
 map <F2> :NERDTreeToggle<CR>
@@ -99,9 +99,7 @@ let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
 let g:indentLine_char = '|'
 
 "php-doc : ctrl+h
-inoremap <C-H> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-H> :call PhpDocSingle()<CR> 
-vnoremap <C-H> :call PhpDocRange()<CR> 
+nnoremap <leader>p :call PhpDocSingle()<CR> 
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -136,6 +134,12 @@ imap <C-c> <CR><Esc>O
 " Improve up/down movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
+
+" Copy past to system clipboard
+vmap <Leader>y "+y
+vmap <Leader>p "+p
+nmap <Leader>y "+y
+nmap <Leader>p "+p
 
 " switch between tab
 nnoremap tn :tabn<CR>
