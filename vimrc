@@ -98,8 +98,8 @@ let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
 " Indent line carachter displayd
 let g:indentLine_char = '|'
 
-"php-doc : ctrl+h
-nnoremap <leader>p :call PhpDocSingle()<CR> 
+"php-doc : leader+h
+nnoremap <leader>h :call PhpDocSingle()<CR> 
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'

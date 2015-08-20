@@ -32,6 +32,7 @@
     df = diff
     lg = log --graph --oneline --decorate
     merge = merge --no-commit
+    tree = log --graph --full-history --all --color --date=short --pretty=format:'%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset'
 [merge]
     conflictstyle = diff3
     ;tool = meld
