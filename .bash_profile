@@ -10,11 +10,11 @@ parse_git_branch() {
 # Source: kirsle.net/wizards/ps1.html
 OS=$(uname)
 if [ "${OS}" != "Linux" ]; then
-    export PS1="\n\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
+    export PS1="\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
 
     export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
 else
-    export PS1="\n\[$(tput bold)\]\[$(tput setaf 5)\]➜\[$(tput setaf 7)\] \w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
+    export PS1="\[$(tput bold)\]\[$(tput setaf 5)\]➜\[$(tput sgr0 ; tput setaf 7)\] \w\[$(tput bold ; tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
 fi
 
 alias ll='ls -al'
