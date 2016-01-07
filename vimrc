@@ -149,6 +149,8 @@ nnoremap tp :tabp<CR>
 
 " I can type :help on my own, thanks.
 noremap <F1> <Esc>
+vnoremap <F1> <Esc>
+inoremap <F1> <Esc>
 
 " Where do you think you are !
 map <up> <nop>
