@@ -1,0 +1,18 @@
+screen -ls
+
+screen -rd 4199.pts-0.monitor
+
+
+
+
+Créer un screen : 
+screen -S thomas
+
+Ajouter une window
+Ctrl + a c
+
+Lister les windows
+ctrl + a "
+
+Rename a window
+ctrl + a A
