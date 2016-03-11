@@ -39,3 +39,4 @@ On Windows:
     fi
 
     ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+    ln -s ~/dotfiles/.screenrc ~/.screenrc
