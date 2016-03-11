@@ -149,6 +149,8 @@ nnoremap tp :tabp<CR>
 
 " I can type :help on my own, thanks.
 noremap <F1> <Esc>
+vnoremap <F1> <Esc>
+inoremap <F1> <Esc>
 
 " Where do you think you are !
 map <up> <nop>
@@ -164,6 +166,7 @@ imap <right> <nop>
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
 "TWIG coloration (use htmljinja a python template engine)
 au BufRead,BufNewFile *.twig set filetype=htmljinja
+au BufRead,BufNewFile *.scala set filetype=scala
 
 
 "HTML
