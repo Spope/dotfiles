@@ -25,3 +25,5 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+
+setxkbmap -option "nbsp:none"
