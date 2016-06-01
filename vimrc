@@ -60,13 +60,8 @@ set backspace=indent,eol,start
 " Cache les fichiers lors de l'ouverture d'autre fichiers
 set hidden
 
-"set background=dark
-" colorscheme solarized
-
-"let molokai_original=1
 "colorscheme base16-ocean
 colorscheme mustang
-"colorscheme molokai
 if has("win32") || has("win16")
     set guifont=Consolas:h10
 else
@@ -173,13 +168,3 @@ au BufRead,BufNewFile *.scala set filetype=scala
 " Bind ctrl + space for completion
 :imap <C-Space> <C-X><C-O>
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-
-function! Paste()
-    normal! "ap
-    normal! vjjjjjjjj
-endfunction
-
-function! Getter(lowCase, upperCase) range
-    execute( a:firstline.",".a:lastline."s/Alone/".a:upperCase."/g")
-    execute( a:firstline.",".a:lastline."s/alone/".a:lowCase."/g")
-endfunction
