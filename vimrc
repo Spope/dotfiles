@@ -23,7 +23,9 @@ set guioptions-=m     "remove menu bar
 set guioptions-=T     "remove toolbar
 set guioptions-=r     "remove right-hand scroll bar
 set guioptions-=L     "remove left-hand scroll bar
-set autoread          " Set to auto read when a file is changed from the outside
+set autoread          "Set to auto read when a file is changed from the outside
+
+set synmaxcol=200     "Stop color highlight on lines of 200+ characters (slow)
 
 " Non text chars color
 hi NonText ctermfg=7 guifg=gray
@@ -109,6 +111,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_php_checkers = ['php']
 
 """""""""""""""""
 " Key binding
