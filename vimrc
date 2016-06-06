@@ -1,70 +1,64 @@
-" Annule la compatibilité avec VI
+" Cancek VI compatibility
 set nocompatible
 
-" Activation de pathogen. Doit rester en haut de .vimrc
+" Pathogen init; Must be on top of vimRC
 call pathogen#infect()
 silent! call pathogen#helptags()
 
 """"""""""""""""""
-" Affichage
+" Display
 """"""""""""""""""
-set title             " Met à jour le titre de la fenetre
+set title             " Update window title
 set number            " line number
-set ruler             " Affice la position du curseur
-" set colorcolumn=80    " Affiche la regle a 80 characteres
-" highlight ColorColumn guibg=Black
-set wrap              " Affiche les lignes trop longues sur plusieurs ligne
-set scrolloff=3       " Affiche un mini de 3 lignes autor du curseur
+set ruler             " Display cursor position
+set wrap              " Wrap long line
+set scrolloff=3       " Space aroun cursor on top / bottom
 
 set t_Co=256          " 256 colors
 set encoding=utf-8
-set hi=1000           " Historique des commandes
-set guioptions-=m     "remove menu bar
-set guioptions-=T     "remove toolbar
-set guioptions-=r     "remove right-hand scroll bar
-set guioptions-=L     "remove left-hand scroll bar
-set autoread          "Set to auto read when a file is changed from the outside
+set hi=1000           " Command history
+set guioptions-=m     " remove menu bar
+set guioptions-=T     " remove toolbar
+set guioptions-=r     " remove right-hand scroll bar
+set guioptions-=L     " remove left-hand scroll bar
+set autoread          " Set to auto read when a file is changed from the outside
 
-autocmd BufNewFile,BufRead *.log set synmaxcol=200     "Stop color highlight on lines of 200+ characters (slow)
+autocmd BufNewFile,BufRead *.log set synmaxcol=200  "Stop color highlight on lines of 200+ characters (slow)
 
+hi NonText ctermfg=7 guifg=gray " Non text chars color
 
-" Non text chars color
-hi NonText ctermfg=7 guifg=gray
+syntax enable  " Syntax hightlight
 
-" Active la coloration syntaxique
-syntax enable
-" Active les comportements specifiques aux types de fichiers comme
-" la syntaxe et l'indentation
+" Specific behaviour for file (syntax, indent ...)
 filetype on
 filetype plugin on
 filetype indent on
 
-set autoread          " Recharge le fichier lorsqu'il a été changé à l'exterieur
-" set autoindent        " Autoindent on line break
+set autoread          " Reload file on external change
 
-" -- Recherche
-set ignorecase        " Ignore la casse lors d'une recherche
-set smartcase         " Active la casse si la recherche en contient une
-set incsearch         " Surligne les résultats de recherche pendant la saisie
-set hlsearch          " Surligne les résultats de recherche
+" -- Search
+set ignorecase        " Ignore case on serach
+set smartcase         " Search with case if case in search
+set incsearch         " Higligth search during search
+set hlsearch          " Higligth search
 
 " -- Beep
-set visualbell        " Empeche Vim de beeper
-set noerrorbells      " Empeche Vim de bepper
+set visualbell        " No beep
+set noerrorbells      " No beep
 
 "convert tab to space
 set expandtab
 set tabstop=4
 set shiftwidth=4
 
-" Active le comportement 'normal' de la touche backspace
+" Backspace normal behaviour
 set backspace=indent,eol,start
 
-" Cache les fichiers lors de l'ouverture d'autre fichiers
+" Allow buffer switch witouht be prompted 'save file'
 set hidden
 
-"colorscheme base16-ocean
 colorscheme mustang
+
 if has("win32") || has("win16")
     set guifont=Consolas:h10
 else
@@ -85,25 +79,6 @@ else
     set wildignore+=.git\*,.hg\*,.svn\*
 endif
 
-" Leader map for plugins
-let mapleader="\<Space>"
-
-"Open nerdtree on F2
-map <F2> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
-
-" Indent line carachter displayd
-let g:indentLine_char = '|'
-
-"php-doc : leader+h
-nnoremap <leader>h :call PhpDocSingle()<CR> 
-
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-map <C-I> :CtrlPBuffer<CR>
-
 "CtrlP
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|vendor|cache)|(\.(git|hg|svn))$',
@@ -111,8 +86,15 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
+
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_php_checkers = ['php']
+
+" Files format
+au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
+"TWIG coloration (use htmljinja a python template engine)
+au BufRead,BufNewFile *.twig set filetype=htmljinja
+au BufRead,BufNewFile *.scala set filetype=scala
 
 """""""""""""""""
 " Key binding
@@ -158,14 +140,7 @@ map <left> <nop>
 map <right> <nop>
 imap <up> <nop>
 imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-" Files format
-au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
-"TWIG coloration (use htmljinja a python template engine)
-au BufRead,BufNewFile *.twig set filetype=htmljinja
-au BufRead,BufNewFile *.scala set filetype=scala
+imap <left> <nop> imap <right> <nop>
 
 
 "HTML
@@ -173,21 +148,21 @@ au BufRead,BufNewFile *.scala set filetype=scala
 :imap <C-Space> <C-X><C-O>
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
-" lightline (powerline)
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ }
+" Leader map for plugins
+let mapleader="\<Space>"
+
+"Open nerdtree on F2
+map <F2> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
+
+" Indent line carachter displayd
+let g:indentLine_char = '|'
+
+"php-doc : leader+h
+nnoremap <leader>h :call PhpDocSingle()<CR> 
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+map <C-I> :CtrlPBuffer<CR>
