@@ -26,4 +26,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+alias tmux='tmux -2'
+
 setxkbmap -option "nbsp:none"
