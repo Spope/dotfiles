@@ -94,6 +94,7 @@ let g:syntastic_php_checkers = ['php']
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
 "TWIG coloration (use htmljinja a python template engine)
 au BufRead,BufNewFile *.twig set filetype=htmljinja
+au BufRead,BufNewFile *.njk set filetype=htmljinja
 au BufRead,BufNewFile *.scala set filetype=scala
 
 """""""""""""""""
