@@ -99,6 +99,9 @@ au BufRead,BufNewFile *.scala set filetype=scala
 """""""""""""""""
 " Key binding
 """""""""""""""""
+" Leader map for plugins
+let mapleader="\<Space>"
+
 " Split naviguation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -148,9 +151,6 @@ imap <left> <nop> imap <right> <nop>
 :imap <C-Space> <C-X><C-O>
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
-" Leader map for plugins
-let mapleader="\<Space>"
-
 "Open nerdtree on F2
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
@@ -166,3 +166,9 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 map <C-I> :CtrlPBuffer<CR>
+
+"Markdown syntax
+let g:vim_markdown_folding_disabled = 1
+
+"emmet : 'ctrl + y ,'
+"WindowSwap.vim 'leader + ww'
