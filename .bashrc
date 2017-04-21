@@ -33,7 +33,7 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-export TERM=xterm-256color
+#export TERM=xterm-256color
  
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
