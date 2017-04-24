@@ -1,0 +1,5 @@
+project=$1
+
+file='tmuxConfigurations/'${project}'.conf';
+
+tmux -f $file attach
