@@ -1,5 +1,15 @@
 project=$1
 
+if [ ! -n "$project" ]; then
+    echo "Project name needed"
+    exit 1
+fi
+
 file='tmuxConfigurations/'${project}'.conf';
 
-tmux -f $file attach
+if [ ! -f "$file" ]; then
+    echo "Configuration file not found for this project"
+    exit 1
+fi
+
+tmux -2f $file attach
