@@ -74,7 +74,7 @@ mux_new_window() {
         printf "\033]0;$CONFIG_name\007"
         case $CONFIG_mux in
             "tmux")
-                tmux -2 new-session -d -s "$CONFIG_name" -n "$2"
+                tmux new-session -d -s "$CONFIG_name" -n "$1"
                 ;;
             "screen")
                 screen -d -m -S "$CONFIG_name" -t "$1" $SHELL
@@ -128,7 +128,7 @@ mux_send() {
 mux_finalize() {
     case $CONFIG_mux in
         "tmux")
-            tmux attach-session -t "$CONFIG_name"
+            tmux -2 attach-session -t "$CONFIG_name"
             rm -f "$CONFIG_name"
             ;;
         "screen") screen -r "$CONFIG_name" ;;
