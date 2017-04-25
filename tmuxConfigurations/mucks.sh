@@ -1,4 +1,5 @@
-#!/bin/sh 
+#!/bin/bash
+
 CONFIG_mux="tmux"
 CONFIG_id="mucks$$"
 CONFIG_dir=.
