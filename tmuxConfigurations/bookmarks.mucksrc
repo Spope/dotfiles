@@ -5,8 +5,9 @@ name: Bookmarks
 dir: /home/projects/public_html/bookmarks
 mux: tmux
 
-[Vim]
+[Vim*]
 vim
+C-m
 
 [Mongo]
 mongo bookmarks

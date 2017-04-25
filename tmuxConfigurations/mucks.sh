@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/bin/sh 
 CONFIG_mux="tmux"
 CONFIG_id="mucks$$"
 CONFIG_dir=.
@@ -72,12 +71,13 @@ mux_new_window() {
         [ -n $CONFIG_pre ] && eval $CONFIG_pre
         cd $CONFIG_dir
         printf "\033]0;$CONFIG_name\007"
+        WINDOW_NAME=`echo $1 | sed -e 's/[\*]//g'`
         case $CONFIG_mux in
             "tmux")
-                tmux new-session -d -s "$CONFIG_name" -n "$1"
+                tmux new-session -d -s "$CONFIG_name" -n "$WINDOW_NAME"
                 ;;
             "screen")
-                screen -d -m -S "$CONFIG_name" -t "$1" $SHELL
+                screen -d -m -S "$CONFIG_name" -t "$WINDOW_NAME" $SHELL
                 ;;
         esac
         WINDEX=0
@@ -87,6 +87,9 @@ mux_new_window() {
             "screen") screen -S "$CONFIG_name" -X screen -t "$1" $SHELL ;;
         esac
         WINDEX=$((WINDEX+1))
+    fi
+    if [[ $1 =~ [\*]$ ]] ; then
+        SELECT_INDEX=$((WINDEX+1))
     fi
     [ -n $CONFIG_prewnd ] && mux_send $CONFIG_prewnd
     LAST_WINDOW_NAME="$1"
@@ -112,6 +115,14 @@ mux_layout() {
     esac
 }
 
+mux_window() {
+    case $CONFIG_mux in
+        "tmux")
+            tmux select-window -t "$CONFIG_name:$SELECT_INDEX"
+            ;;
+    esac
+}
+
 mux_sleep() {
     sleep $1
 }
@@ -126,6 +137,10 @@ mux_send() {
 }
 
 mux_finalize() {
+    if [ -n "$SELECT_INDEX" ] ; then
+        mux_window
+    fi
+
     case $CONFIG_mux in
         "tmux")
             tmux -2 attach-session -t "$CONFIG_name"
