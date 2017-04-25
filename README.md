@@ -41,3 +41,8 @@ On Windows:
     ln -s ~/dotfiles/.gitconfig ~/.gitconfig
     ln -s ~/dotfiles/.screenrc ~/.screenrc
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+## Mucks configuration
+
+    ln -s ~/dotfiles/tmuxConfigurations/mucks/mucks.sh /usr/local/bin/mucks
+    chmod +x ~/dotfiles/tmuxConfigurations/mucks/mucks.sh

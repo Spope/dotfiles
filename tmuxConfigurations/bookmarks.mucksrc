@@ -1,0 +1,24 @@
+#
+# Bookmarks project
+#
+name: Bookmarks
+dir: /home/projects/public_html/bookmarks
+mux: tmux
+
+[Vim]
+vim
+
+[Mongo]
+mongo bookmarks
+
+[Logs]
+cd logs
+tail -f bookmarks.log
+
+[Command]
+
+[Deploy]
+cd /opt/bookmarks/
+
+[Tests]
+cd src/Tests

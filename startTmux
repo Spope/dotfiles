@@ -1,3 +1,4 @@
+# Project Name
 project=$1
 
 if [ ! -n "$project" ]; then
@@ -5,6 +6,7 @@ if [ ! -n "$project" ]; then
     exit 1
 fi
 
+# Project Configuration file
 file='tmuxConfigurations/'${project}'.conf';
 
 if [ ! -f "$file" ]; then
@@ -12,4 +14,5 @@ if [ ! -f "$file" ]; then
     exit 1
 fi
 
+# Executing configuration file
 tmux -2f $file attach
