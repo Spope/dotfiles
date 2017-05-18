@@ -3,6 +3,15 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+function jobs_count {
+    cnt=$(jobs -l | wc -l)
+    if [ $cnt -gt 0 ]; then
+        echo -ne "\e[90m${cnt}\e[m "
+    fi
+}
+
+# PS1 Style : http://misc.flogisoft.com/bash/tip_colors_and_formatting
+
 # Custom bash prompt
 #
 # Includes custom character for the prompt, path, and Git branch name.
@@ -10,11 +19,11 @@ parse_git_branch() {
 # Source: kirsle.net/wizards/ps1.html
 OS=$(uname)
 if [ "${OS}" != "Linux" ]; then
-    export PS1="\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
+    export PS1="\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]\`jobs_count\`"
 
     export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
 else
-    export PS1="\[$(tput bold)\]\[$(tput setaf 5)\]➜\[$(tput sgr0 ; tput setaf 7)\] \w\[$(tput bold ; tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
+    export PS1="\[$(tput bold)\]\[$(tput setaf 5)\]➜\[$(tput sgr0 ; tput setaf 7)\] \w\[$(tput bold ; tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]\`jobs_count\`"
 fi
 
 alias ll='ls -al'
