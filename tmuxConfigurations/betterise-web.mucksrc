@@ -1,0 +1,19 @@
+#
+# Betterise-web project
+#
+name: Betterise-web
+dir: /var/www/betterise-web
+mux: tmux
+
+[Vim*]
+vim
+C-m
+
+[Logs]
+cd logs
+tail -f betterise-web.log
+
+[Mongo]
+mongo betterise
+
+[Command]
