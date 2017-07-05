@@ -160,7 +160,7 @@ let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
 " Indent line carachter displayd
 let g:indentLine_char = '|'
 
-"php-doc : leader+h
+"php-doc : leader + h
 nnoremap <leader>h :call PhpDocSingle()<CR> 
 
 let g:ctrlp_map = '<c-p>'
@@ -171,5 +171,5 @@ map <C-I> :CtrlPBuffer<CR>
 "Markdown syntax
 let g:vim_markdown_folding_disabled = 1
 
-"emmet : 'ctrl + y ,'
-"WindowSwap.vim 'leader + ww'
+"emmet          : ctrl + y ,
+"WindowSwap.vim : leader + ww
