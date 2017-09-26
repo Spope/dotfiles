@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/spope/projects/test/apache'
-let g:netrw_dirhist_2='/Users/spope/projects/azimuth.me/.git'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/projects/dotfiles'
+let g:netrw_dirhist_2='/home/projects/dotfiles/tmuxConfigurations'
+let g:netrw_dirhist_3='/home/projects/dotfiles'
+let g:netrw_dirhist_4='/home/projects/dotfiles/tmuxConfigurations'
+let g:netrw_dirhist_5='/home/projects/dotfiles'

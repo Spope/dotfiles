@@ -10,6 +10,12 @@ silent! call pathogen#helptags()
 """"""""""""""""""
 set title             " Update window title
 set number            " line number
+set relativenumber    " show relative line numbers"
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 set ruler             " Display cursor position
 set wrap              " Wrap long line
 set scrolloff=3       " Space aroun cursor on top / bottom
@@ -153,9 +159,16 @@ imap <left> <nop> imap <right> <nop>
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 "Open nerdtree on F2
-map <F2> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
+"map <F2> :NERDTreeToggle<CR>
+"let NERDTreeShowHidden=1
+"let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
+
+map <F2> :Lexplore<CR>
+let g:netrw_liststyle = 3    " List style
+let g:netrw_banner = 0       " Remove useless header
+let g:netrw_browse_split = 4 " Open file in last window
+let g:netrw_winsize = 25     " Width
+let g:netrw_altv = 1
 
 " Indent line carachter displayd
 let g:indentLine_char = '|'
