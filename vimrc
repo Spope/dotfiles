@@ -16,6 +16,8 @@ Plug 'godlygeek/tabular'
 "Plug 'genoma/vim-less'
 Plug 'lunaru/vim-less'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'itchyny/lightline.vim'
+Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 
 "  You will load your plugin here
@@ -29,12 +31,14 @@ call plug#end()
 """"""""""""""""""
 set title             " Update window title
 set number            " line number
-set relativenumber    " show relative line numbers"
+set relativenumber    " show relative line numbers
+
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
 set ruler             " Display cursor position
 set wrap              " Wrap long line
 set scrolloff=3       " Space aroun cursor on top / bottom
@@ -195,6 +199,8 @@ let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
 
 " Indent line carachter displayd
 let g:indentLine_char = '│'
+"let g:indentLine_setColors = 0
+let g:indentLine_color_term = 238
 
 "php-doc : leader + h
 nnoremap <leader>h :call PhpDocSingle()<CR> 
@@ -204,8 +210,6 @@ let g:ctrlp_cmd = 'CtrlP'
 
 map <C-I> :CtrlPBuffer<CR>
 
-"Markdown syntax
-let g:vim_markdown_folding_disabled = 1
 
 "emmet          : ctrl + y ,
 "WindowSwap.vim : leader + ww
