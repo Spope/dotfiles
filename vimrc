@@ -25,7 +25,7 @@ call plug#end()
 """"""""""""""""""
 set title             " Update window title
 set number            " line number
-set relativenumber    " Relative line number
+"set relativenumber    " Relative line number
 "augroup numbertoggle
   "autocmd!
   "autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
