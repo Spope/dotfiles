@@ -1,0 +1,16 @@
+#
+# Bookmarks project
+#
+name: Kipit
+dir: /var/www/bookmarks/
+mux: tmux
+
+[Command*]
+
+[Mongo]
+mongo bookmarks
+
+[Logs]
+cd logs
+
+[Command]

@@ -1,15 +1,44 @@
 " Cancek VI compatibility
 set nocompatible
 
-" Pathogen init; Must be on top of vimRC
-call pathogen#infect()
-silent! call pathogen#helptags()
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug 'qpkorr/vim-bufkill'
+Plug 'itchyny/lightline.vim'
+Plug 'croaker/mustang-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/nerdcommenter'
+Plug 'godlygeek/tabular'
+"Plug 'genoma/vim-less'
+Plug 'lunaru/vim-less'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'itchyny/lightline.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'scrooloose/nerdtree'
+
+"  You will load your plugin here
+"  Make sure you use single quotes
+" Initialize plugin system
+call plug#end()
+
 
 """"""""""""""""""
 " Display
 """"""""""""""""""
 set title             " Update window title
 set number            " line number
+set relativenumber    " show relative line numbers
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
 set ruler             " Display cursor position
 set wrap              " Wrap long line
 set scrolloff=3       " Space aroun cursor on top / bottom
@@ -103,6 +132,8 @@ au BufRead,BufNewFile *.scala set filetype=scala
 " Leader map for plugins
 let mapleader="\<Space>"
 
+map <leader>lb :CtrlPBuffer <CR>
+
 " Split naviguation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -157,8 +188,19 @@ map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
 
+"map <F1> :let g:netrw_chgwin = winnr() <CR>
+"map <F2> :Lexplore<CR>
+"let g:netrw_liststyle = 3       " List style
+"let g:netrw_banner = 0          " Remove useless header
+"let g:netrw_browse_split = 4    " Open file in last window
+"let g:netrw_winsize = 25        " Width
+"let g:netrw_altv = 1
+"let g:netrw_localrmdir='rm -r' " Allow to remove non empty folder
+
 " Indent line carachter displayd
-let g:indentLine_char = '|'
+let g:indentLine_char = '│'
+"let g:indentLine_setColors = 0
+let g:indentLine_color_term = 238
 
 "php-doc : leader + h
 nnoremap <leader>h :call PhpDocSingle()<CR> 
@@ -168,8 +210,6 @@ let g:ctrlp_cmd = 'CtrlP'
 
 map <C-I> :CtrlPBuffer<CR>
 
-"Markdown syntax
-let g:vim_markdown_folding_disabled = 1
 
 "emmet          : ctrl + y ,
 "WindowSwap.vim : leader + ww
