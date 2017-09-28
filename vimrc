@@ -220,6 +220,6 @@ let g:lightline = {
       \ }
 
 
-
-"emmet          : ctrl + y ,
-"WindowSwap.vim : leader + ww
+set foldmethod=indent
+set foldlevel=1
+hi Folded guibg=#262626 ctermbg=235
