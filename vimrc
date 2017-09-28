@@ -108,7 +108,7 @@ let g:ctrlp_custom_ignore = {
 
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_php_checkers = ['php']
-let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_javascript_checkers = ['jshint']
 
 " Files format
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
