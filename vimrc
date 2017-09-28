@@ -42,7 +42,7 @@ set guioptions-=m     " remove menu bar
 set guioptions-=T     " remove toolbar
 set guioptions-=r     " remove right-hand scroll bar
 set guioptions-=L     " remove left-hand scroll bar
-set autoread          " Set to auto read when a file is changed from the outside
+set autoread          " Reload file on external change
 
 autocmd BufNewFile,BufRead *.log set synmaxcol=200  "Stop color highlight on lines of 200+ characters (slow)
 
@@ -54,8 +54,6 @@ syntax enable  " Syntax hightlight
 filetype on
 filetype plugin on
 filetype indent on
-
-set autoread          " Reload file on external change
 
 " -- Search
 set ignorecase        " Ignore case on serach
@@ -110,6 +108,7 @@ let g:ctrlp_custom_ignore = {
 
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_php_checkers = ['php']
+let g:syntastic_javascript_checkers = ['jslint']
 
 " Files format
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
