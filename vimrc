@@ -13,7 +13,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'lunaru/vim-less'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'itchyny/lightline.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 "  Make sure you use single quotes
@@ -109,6 +108,11 @@ let g:ctrlp_custom_ignore = {
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_php_checkers = ['php']
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_error_symbol = '✖'
+let g:syntastic_style_error_symbol = '✖'
+let g:syntastic_warning_symbol = '!'
+let g:syntastic_style_warning_symbol = '!'
 
 " Files format
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
@@ -200,6 +204,21 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 map <C-I> :CtrlPBuffer<CR>
+
+let g:lightline = {
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'syntastic', 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_expand': {
+      \   'syntastic': 'SyntasticStatuslineFlag'
+      \ },
+      \ 'component_type': {
+      \   'syntastic': 'error',
+      \ }
+      \ }
+
 
 
 "emmet          : ctrl + y ,
