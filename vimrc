@@ -172,25 +172,18 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop> imap <right> <nop>
 
+"map <C-J> :sp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+"Remove trailing space on save
+autocmd BufWritePre * %s/\s\+$//e"
 
 "HTML
-" Bind ctrl + space for completion
-:imap <C-Space> <C-X><C-O>
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 "Open nerdtree on F2
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
-
-"map <F1> :let g:netrw_chgwin = winnr() <CR>
-"map <F2> :Lexplore<CR>
-"let g:netrw_liststyle = 3       " List style
-"let g:netrw_banner = 0          " Remove useless header
-"let g:netrw_browse_split = 4    " Open file in last window
-"let g:netrw_winsize = 25        " Width
-"let g:netrw_altv = 1
-"let g:netrw_localrmdir='rm -r' " Allow to remove non empty folder
 
 " Indent line carachter displayd
 let g:indentLine_char = '│'
