@@ -2,7 +2,7 @@
 # Betterise project
 #
 name: Betterise
-dir: /var/www/betterise.dev/betterise
+dir: /var/www/betterise
 mux: tmux
 
 [Vim*]
