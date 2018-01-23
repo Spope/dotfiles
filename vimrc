@@ -15,6 +15,8 @@ Plug 'lunaru/vim-less'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
+Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -191,7 +193,7 @@ let g:indentLine_char = '│'
 let g:indentLine_color_term = 238
 
 "php-doc : leader + h
-nnoremap <leader>h :call PhpDocSingle()<CR> 
+nnoremap <leader>h :call PhpDocSingle()<CR>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -216,3 +218,10 @@ let g:lightline = {
 set foldmethod=indent
 set foldlevel=1
 hi Folded guibg=#262626 ctermbg=235
+
+
+" Set html color to js template ``
+"autocmd FileType javascript JsPreTmpl html
+
+" Set file type for vue component
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css

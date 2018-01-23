@@ -2,7 +2,7 @@
 # Bookmarks project
 #
 name: Bookmarks
-dir: /home/projects/public_html/bookmarks
+dir: /var/www/projets/list/bookmarks/
 mux: tmux
 
 [Vim*]
