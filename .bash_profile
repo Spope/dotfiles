@@ -39,3 +39,7 @@ alias tmux='tmux -2'
 
 setxkbmap -option "nbsp:none"
 setxkbmap -layout fr -option ctrl:nocaps #https://unix.stackexchange.com/questions/99085/save-setxkbmap-settings
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
