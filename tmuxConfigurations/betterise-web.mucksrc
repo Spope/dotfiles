@@ -2,7 +2,7 @@
 # Betterise-web project
 #
 name: Betterise-web
-dir: /var/www/betterise-web
+dir: ~/boulot/betterise
 mux: tmux
 
 [Vim*]
@@ -11,9 +11,9 @@ C-m
 
 [Logs]
 cd logs
-tail -f betterise-web.log
+#tail -f betterise-web.log
 
 [Mongo]
-mongo betterise
+#mongo betterise
 
 [Command]

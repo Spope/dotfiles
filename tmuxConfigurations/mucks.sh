@@ -13,7 +13,7 @@ trim() {
 
 parse_header() {
     k=`echo "$1" | sed -e 's/:.*$//'`
-    v=`echo "$1" | sed -e 's/^[^:]*:\s*//'`
+    v=`echo "$1" | sed -e 's/^[^:]*: *//'`
     k=`trim "$k"`
     v=`trim "$v"`
     # TODO check if $k is a valid key
@@ -68,6 +68,7 @@ parse_config() {
 mux_new_window() {
     if [ -z $STARTED ] ; then
         STARTED=1
+        echo "'$CONFIG_dir'"
         cd $CONFIG_dir
         [ -n $CONFIG_pre ] && eval $CONFIG_pre
         cd $CONFIG_dir

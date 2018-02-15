@@ -2,7 +2,7 @@
 # Maternite project
 #
 name: Maternite
-dir: /var/www/maternite
+dir: /Users/spope/boulot/betterise
 mux: tmux
 
 [Vim*]
@@ -11,9 +11,9 @@ C-m
 
 [Logs]
 cd logs
-tail -f maternite.log
+#tail -f maternite.log
 
 [Mongo]
-mongo maternite
+#mongo maternite
 
 [Command]
