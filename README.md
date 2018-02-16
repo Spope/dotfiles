@@ -44,5 +44,8 @@ On Windows:
 
 ## Mucks configuration
 
-    ln -s ~/dotfiles/tmuxConfigurations/mucks.sh /usr/local/bin/mucks
-    chmod +x ~/dotfiles/tmuxConfigurations/mucks.sh
+    ln -s ~/dotfiles/tmuxConfigurations/mucks-command.sh /usr/local/bin/mucks-command
+    chmod +x ~/dotfiles/tmuxConfigurations/mucks-command.sh
+
+    ln -s ~/dotfiles/tmuxConfigurations/mucks-menu.sh /usr/local/bin/mucks
+    chmod +x ~/dotfiles/tmuxConfigurations/mucks-menu.sh

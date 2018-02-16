@@ -2,7 +2,7 @@
 # Betterise-web project
 #
 name: Betterise-web
-dir: ~/boulot/betterise
+dir: ~/boulot/betterise-web
 mux: tmux
 
 [Vim*]
@@ -13,7 +13,7 @@ C-m
 cd logs
 #tail -f betterise-web.log
 
-[Mongo]
-#mongo betterise
-
 [Command]
+
+[Docker]
+docker-compose up

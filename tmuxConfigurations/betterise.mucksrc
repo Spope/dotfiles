@@ -2,10 +2,10 @@
 # Betterise project
 #
 name: Betterise
-dir: ~/boulot/betterise/
+dir: /Users/spope/boulot/betterise
 mux: tmux
 
-[Vim*]
+[Vim]
 vim
 C-m
 
@@ -16,3 +16,6 @@ cd logs
 docker-compose exec mongo mongo betterise
 
 [Command]
+
+[Docker*]
+docker-compose up

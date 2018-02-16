@@ -1,0 +1,24 @@
+#
+# BetteriseApi project
+#
+name: BetteriseApi
+dir: /Users/spope/boulot/betterise-api
+mux: tmux
+
+[Vim*]
+vim
+C-m
+
+[Logs]
+#cd logs
+#tail -f betterise.log
+#- vsplit
+#tail -f betterise.log
+
+[Mongo]
+#docker-compose exec mongo mongo betterise
+
+[Command]
+
+[Docker]
+#docker-compose up

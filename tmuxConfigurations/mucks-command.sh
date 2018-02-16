@@ -8,12 +8,12 @@ CONFIG_name="mucks - `dirname .`"
 [ -d "$TMPDIR" ] && TMP="$TMPDIR" || TMP=/tmp
 
 trim() {
-    echo "$1" | sed -e 's/#.*$//' -e 's/\s*$//' -e 's/^\s*//'
+    echo "$1" | sed -e 's/#.*$//' -e 's/[[:space:]]*$//' -e 's/^[[:space:]]*//'
 }
 
 parse_header() {
     k=`echo "$1" | sed -e 's/:.*$//'`
-    v=`echo "$1" | sed -e 's/^[^:]*: *//'`
+    v=`echo "$1" | sed -e 's/^[^:]*:[[:space:]]*//'`
     k=`trim "$k"`
     v=`trim "$v"`
     # TODO check if $k is a valid key
@@ -21,8 +21,8 @@ parse_header() {
 }
 
 parse_layout() {
-    cmd="`echo $1 | sed -e 's/^-\s*/-/' -e 's/\s.*$//'`"
-    args="`echo $1 | sed -e 's/^-\s*[^ \t]*\s*//'`"
+    cmd="`echo $1 | sed -e 's/^-[[:space:]]*/-/' -e 's/[[:space:]].*$//'`"
+    args="`echo $1 | sed -e 's/^-[[:space:]]*[^ \t]*[[:space:]]*//'`"
     case $cmd in
         "-split" | "-hsplit")
             mux_hsplit
@@ -68,7 +68,6 @@ parse_config() {
 mux_new_window() {
     if [ -z $STARTED ] ; then
         STARTED=1
-        echo "'$CONFIG_dir'"
         cd $CONFIG_dir
         [ -n $CONFIG_pre ] && eval $CONFIG_pre
         cd $CONFIG_dir
