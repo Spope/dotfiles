@@ -17,6 +17,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
+Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -105,6 +106,10 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
+" Search tags wiht \
+nnoremap \ :CtrlPTag<cr>
+" Got to tag under cursor
+map <C-k> <C-]>
 
 
 let g:syntastic_quiet_messages = { "type": "style" }

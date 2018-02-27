@@ -5,20 +5,23 @@ name: BetteriseApi
 dir: /Users/spope/boulot/betterise-api
 mux: tmux
 
-[Vim*]
+[Vim]
 vim
 C-m
 
 [Logs]
-#cd logs
-#tail -f betterise.log
+cd ./var/log/
+#tail -f dev.log
 #- vsplit
 #tail -f betterise.log
 
 [Mongo]
-#docker-compose exec mongo mongo betterise
+sleep 5 && docker-compose exec mongo mongo betterise
 
 [Command]
 
-[Docker]
-#docker-compose up
+[Command Docker]
+sleep 5 && docker-compose exec php /bin/bash
+
+[Docker*]
+docker-compose up

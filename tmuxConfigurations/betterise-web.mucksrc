@@ -2,10 +2,10 @@
 # Betterise-web project
 #
 name: Betterise-web
-dir: ~/boulot/betterise-web
+dir: /Users/spope/boulot/betterise-web
 mux: tmux
 
-[Vim*]
+[Vim]
 vim
 C-m
 
@@ -15,5 +15,5 @@ cd logs
 
 [Command]
 
-[Docker]
+[Docker*]
 docker-compose up

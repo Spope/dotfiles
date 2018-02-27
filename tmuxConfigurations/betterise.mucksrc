@@ -13,7 +13,10 @@ C-m
 cd logs
 
 [Mongo]
-docker-compose exec mongo mongo betterise
+sleep 5 && docker-compose exec mongo mongo betterise
+
+[Command Docker]
+sleep 5 && docker-compose exec php /bin/bash
 
 [Command]
 

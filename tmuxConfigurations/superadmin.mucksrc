@@ -1,0 +1,19 @@
+#
+# Suoeradmin project
+#
+name: Superadmin
+dir: /Users/spope/boulot/superadmin
+mux: tmux
+
+[Vim*]
+vim
+C-m
+
+[Logs]
+cd logs
+#tail -f superadmin.log
+
+[Command]
+
+[Docker]
+docker-compose up
