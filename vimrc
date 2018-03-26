@@ -16,8 +16,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
-Plug 'posva/vim-vue'
 Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
+Plug 'docteurklein/php-getter-setter.vim'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -114,12 +114,28 @@ map <C-k> <C-]>
 
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_php_checkers = ['php']
+"let g:syntastic_php_phpcs_exec = '/usr/local/bin/phpcs'
+"let g:syntastic_php_phpcs_args = '--standard=PSR2'
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol = '✖'
 let g:syntastic_style_error_symbol = '✖'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_style_warning_symbol = '!'
+
+let g:syntastic_enable_signs = 1
+let g:syntastic_enable_balloons = 1
+let g:syntastic_enable_highlighting = 1
+
+"highlight link SyntasticErrorSign SignColumn
+"highlight link SyntasticWarningSign SignColumn
+"highlight link SyntasticStyleErrorSign SignColumn
+"highlight link SyntasticStyleWarningSign SignColumn
+
+"let g:yntastic_debug = 3
+
+
 
 " Files format
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
@@ -194,6 +210,7 @@ let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
 
 " Indent line carachter displayd
 let g:indentLine_char = '│'
+
 "let g:indentLine_setColors = 0
 let g:indentLine_color_term = 238
 
@@ -224,9 +241,5 @@ set foldmethod=indent
 set foldlevel=1
 hi Folded guibg=#262626 ctermbg=235
 
-
-" Set html color to js template ``
-"autocmd FileType javascript JsPreTmpl html
-
-" Set file type for vue component
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+" Generate Getters Setters
+map <leader>g <Plug>PhpgetsetInsertGetterSetter
