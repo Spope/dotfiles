@@ -200,6 +200,9 @@ imap <left> <nop> imap <right> <nop>
 "Remove trailing space on save
 autocmd BufWritePre * %s/\s\+$//e"
 
+":w!! If not sudo, will ask password and save file
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
 "HTML
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 

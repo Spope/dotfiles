@@ -42,6 +42,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 alias tmux='tmux -2'
+alias weather='curl wttr.in/Bordeaux'
 
 setxkbmap -option "nbsp:none"
 setxkbmap -layout fr -option ctrl:nocaps #https://unix.stackexchange.com/questions/99085/save-setxkbmap-settings
