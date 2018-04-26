@@ -29,6 +29,8 @@ if [ "${OS}" != "Linux" ]; then
 
     export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
 else
+    setxkbmap -option "nbsp:none"
+    setxkbmap -layout fr -option ctrl:nocaps #https://unix.stackexchange.com/questions/99085/save-setxkbmap-settings
     export PS1="\[$(tput bold)\]\[$(tput setaf 5)\]➜\[$(tput sgr0 ; tput setaf 7)\] \w\[$(tput bold ; tput setaf 3)\]\$(parse_git_branch)\[$(tput sgr0)\]\`jobs_count\` "
 fi
 
@@ -43,9 +45,6 @@ alias .....="cd ../../../.."
 
 alias tmux='tmux -2'
 alias weather='curl wttr.in/Bordeaux'
-
-setxkbmap -option "nbsp:none"
-setxkbmap -layout fr -option ctrl:nocaps #https://unix.stackexchange.com/questions/99085/save-setxkbmap-settings
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion

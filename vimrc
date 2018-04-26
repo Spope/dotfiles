@@ -213,8 +213,6 @@ let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
 
 " Indent line carachter displayd
 let g:indentLine_char = '│'
-
-"let g:indentLine_setColors = 0
 let g:indentLine_color_term = 238
 
 "php-doc : leader + h
