@@ -111,8 +111,25 @@ nnoremap \ :CtrlPTag<cr>
 " Got to tag under cursor
 map <C-k> <C-]>
 
-set listchars=tab:>~,nbsp:_,trail:.
+" Show tab, nbsp and tailing spaces
+exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\uB7"
 set list
+
+
+" Color in red next highligth
+nnoremap <silent> n   n:call HLNext(0.1)<cr>
+nnoremap <silent> N   N:call HLNext(0.1)<cr>
+hi WhiteOnRed ctermfg=white ctermbg=darkred
+function! HLNext (blinktime)
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#\%('.@/.'\)'
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
 
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_php_checkers = ['php']
