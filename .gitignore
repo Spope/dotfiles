@@ -1,6 +1,9 @@
 sublime-text-2/Settings/Session.sublime_session
 
 vim/plugged/
+vim/undodir/*
+
+!vim/undodir/.gitkeep
 
 # Created by https://www.gitignore.io
 

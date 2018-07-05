@@ -78,6 +78,9 @@ set backspace=indent,eol,start
 " Allow buffer switch witouht be prompted 'save file'
 set hidden
 
+set undofile " Maintain undo history between sessions"
+set undodir=~/dotfiles/vim/undodir
+
 colorscheme mustang
 
 if has("win32") || has("win16")
