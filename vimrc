@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Plug 'docteurklein/php-getter-setter.vim'
+Plug 'alvan/vim-php-manual'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -272,3 +273,8 @@ hi Folded guibg=#262626 ctermbg=235
 
 " Generate Getters Setters
 map <leader>g <Plug>PhpgetsetInsertGetterSetter
+
+
+"vim-php-manual
+"Shift + k Open vim help
+"Ctrl  + h Open php.net in browser
