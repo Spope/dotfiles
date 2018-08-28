@@ -112,8 +112,11 @@ let g:ctrlp_custom_ignore = {
   \ }
 " Search tags wiht \
 nnoremap \ :CtrlPTag<cr>
-" Got to tag under cursor
-map <C-k> <C-]>
+nnoremap <C-]> :vsp <CR>:exec("tag " . expand("<cword>"))<CR>
+map <C-^> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" Got to tag under cursor > ctrl+$ on mac os ctrl+] otherwise
+" ctr+^ to open in new tab
+set splitright
 
 " Show tab, nbsp and tailing spaces
 exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\uB7"
@@ -278,3 +281,4 @@ map <leader>g <Plug>PhpgetsetInsertGetterSetter
 "vim-php-manual
 "Shift + k Open vim help
 "Ctrl  + h Open php.net in browser
+let g:php_manual_online_search_shortcut = '<c-d>'
