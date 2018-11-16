@@ -19,6 +19,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Plug 'docteurklein/php-getter-setter.vim'
 Plug 'alvan/vim-php-manual'
+Plug 'arnaud-lb/vim-php-namespace'
+Plug 'shawncplus/phpcomplete.vim'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -124,19 +126,19 @@ set list
 
 
 " Color in red next highligth
-nnoremap <silent> n   n:call HLNext(0.1)<cr>
-nnoremap <silent> N   N:call HLNext(0.1)<cr>
-hi WhiteOnRed ctermfg=white ctermbg=darkred
-function! HLNext (blinktime)
-    let [bufnum, lnum, col, off] = getpos('.')
-    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-    let target_pat = '\c\%#\%('.@/.'\)'
-    let ring = matchadd('WhiteOnRed', target_pat, 101)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-    call matchdelete(ring)
-    redraw
-endfunction
+" nnoremap <silent> n   n:call HLNext(0.1)<cr>
+" nnoremap <silent> N   N:call HLNext(0.1)<cr>
+"hi WhiteOnRed ctermfg=white ctermbg=darkred
+"function! HLNext (blinktime)
+    "let [bufnum, lnum, col, off] = getpos('.')
+    "let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    "let target_pat = '\c\%#\%('.@/.'\)'
+    "let ring = matchadd('WhiteOnRed', target_pat, 101)
+    "redraw
+    "exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    "call matchdelete(ring)
+    "redraw
+"endfunction
 
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_php_checkers = ['php']
@@ -282,3 +284,9 @@ map <leader>g <Plug>PhpgetsetInsertGetterSetter
 "Shift + k Open vim help
 "Ctrl  + h Open php.net in browser
 let g:php_manual_online_search_shortcut = '<c-d>'
+
+" Insert php use statement <leader>u
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
+
+" PHP class autocomplete ctrl-x ctrl-o  (ctrl-n / ctrl-p to navigate)
