@@ -1,6 +1,6 @@
 [user]
-    email = pinaudt@gmail.com
-    name = Thomas Pinaud
+	email = pinaudt@gmail.com
+	name = Thomas Pinaud
 [core]
     excludesfile = /home/devserver/homes/thomas/.gitignore
     editor = vim

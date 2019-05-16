@@ -21,6 +21,8 @@ Plug 'docteurklein/php-getter-setter.vim'
 Plug 'alvan/vim-php-manual'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'shawncplus/phpcomplete.vim'
+Plug 'zxqfl/tabnine-vim'
+Plug 'w0rp/ale'
 "  Make sure you use single quotes
 call plug#end()
 
