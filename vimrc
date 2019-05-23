@@ -16,16 +16,19 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
-Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
+Plug 'tobyS/vmustache'
+Plug 'tobyS/pdv'
 Plug 'docteurklein/php-getter-setter.vim'
 Plug 'alvan/vim-php-manual'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'zxqfl/tabnine-vim'
 Plug 'w0rp/ale'
+Plug 'embear/vim-localvimrc'
 "  Make sure you use single quotes
 call plug#end()
 
+" Create .lvimrc into a project for local conf
 
 """"""""""""""""""
 " Display
@@ -246,7 +249,9 @@ let g:indentLine_char = '│'
 let g:indentLine_color_term = 238
 
 "php-doc : leader + h
-nnoremap <leader>h :call PhpDocSingle()<CR>
+"Duplicate the template folder to modify it
+let g:pdv_template_dir = $HOME ."/dotfiles/vim/plugged/pdv/templates"
+nnoremap <leader>h :call pdv#DocumentCurrentLine()<CR>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -290,5 +295,16 @@ let g:php_manual_online_search_shortcut = '<c-d>'
 " Insert php use statement <leader>u
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
+
+let g:ale_linters = {
+\   'php': ['php', 'phpstan'],
+\}
+
+
+" tabnine read only php file
+let g:ycm_filetype_whitelist = { 'php': 1 }
+
+" localvimrc don't ask and load .lvimrc file if found
+let g:localvimrc_ask=0
 
 " PHP class autocomplete ctrl-x ctrl-o  (ctrl-n / ctrl-p to navigate)
