@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'qpkorr/vim-bufkill'
 Plug 'itchyny/lightline.vim'
 Plug 'croaker/mustang-vim'
+Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/indentLine'
@@ -21,10 +22,13 @@ Plug 'tobyS/pdv'
 Plug 'docteurklein/php-getter-setter.vim'
 Plug 'alvan/vim-php-manual'
 Plug 'arnaud-lb/vim-php-namespace'
-Plug 'shawncplus/phpcomplete.vim'
+"Plug 'shawncplus/phpcomplete.vim'
 Plug 'zxqfl/tabnine-vim'
 Plug 'w0rp/ale'
 Plug 'embear/vim-localvimrc'
+Plug 'maximbaz/lightline-ale'
+Plug 'mbbill/undotree'
+Plug 'svermeulen/vim-yoink'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -89,7 +93,11 @@ set hidden
 set undofile " Maintain undo history between sessions"
 set undodir=~/dotfiles/vim/undodir
 
-colorscheme mustang
+" colorscheme mustang
+set background=dark
+set termguicolors
+let g:quantum_black=1
+colorscheme quantum
 
 if has("win32") || has("win16")
     set guifont=Consolas:h10
@@ -131,19 +139,19 @@ set list
 
 
 " Color in red next highligth
-" nnoremap <silent> n   n:call HLNext(0.1)<cr>
-" nnoremap <silent> N   N:call HLNext(0.1)<cr>
-"hi WhiteOnRed ctermfg=white ctermbg=darkred
-"function! HLNext (blinktime)
-    "let [bufnum, lnum, col, off] = getpos('.')
-    "let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-    "let target_pat = '\c\%#\%('.@/.'\)'
-    "let ring = matchadd('WhiteOnRed', target_pat, 101)
-    "redraw
-    "exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-    "call matchdelete(ring)
-    "redraw
-"endfunction
+ nnoremap <silent> n   n:call HLNext(0.1)<cr>
+ nnoremap <silent> N   N:call HLNext(0.1)<cr>
+hi WhiteOnRed ctermfg=white ctermbg=darkred
+function! HLNext (blinktime)
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#\%('.@/.'\)'
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
 
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_php_checkers = ['php']
@@ -260,15 +268,27 @@ map <C-I> :CtrlPBuffer<CR>
 
 let g:lightline = {
       \ 'active': {
-      \   'right': [ [ 'lineinfo' ],
+      \   'right': [
+      \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+      \              [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'syntastic', 'fileformat', 'fileencoding', 'filetype' ] ]
+      \              [ 'syntastic', 'fileformat', 'fileencoding', 'filetype' ]
+      \   ]
       \ },
+      \ 'colorscheme': 'quantum',
       \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag'
+      \   'syntastic': 'SyntasticStatuslineFlag',
+      \   'linter_checking': 'lightline#ale#checking',
+      \   'linter_warnings': 'lightline#ale#warnings',
+      \   'linter_errors': 'lightline#ale#errors',
+      \   'linter_ok': 'lightline#ale#ok',
       \ },
       \ 'component_type': {
       \   'syntastic': 'error',
+      \   'linter_checking': 'left',
+      \   'linter_warnings': 'warning',
+      \   'linter_errors': 'error',
+      \   'linter_ok': 'left',
       \ }
       \ }
 
@@ -296,10 +316,18 @@ let g:php_manual_online_search_shortcut = '<c-d>'
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
 
+" Linter
 let g:ale_linters = {
-\   'php': ['php', 'phpstan'],
+\   'php': ['php'],
 \}
+let g:ale_lint_on_text_changed='normal'
+let g:ale_lint_on_enter=1
 
+"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+"nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+command! Err :ALENext
+command! Perr :ALEPrevious
 
 " tabnine read only php file
 let g:ycm_filetype_whitelist = { 'php': 1 }
@@ -308,3 +336,14 @@ let g:ycm_filetype_whitelist = { 'php': 1 }
 let g:localvimrc_ask=0
 
 " PHP class autocomplete ctrl-x ctrl-o  (ctrl-n / ctrl-p to navigate)
+
+nnoremap <F5> :UndotreeToggle<cr>
+
+" With these mappings, immediately after performing a paste, you can cycle
+" through the history by hitting <F7> and <F9>
+nmap <F7> <plug>(YoinkPostPasteSwapBack)
+nmap <F9> <plug>(YoinkPostPasteSwapForward)
+" We also need to override the p and P keys to notify Yoink that a paste has
+" occurred
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
