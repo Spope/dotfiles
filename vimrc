@@ -22,13 +22,13 @@ Plug 'tobyS/pdv'
 Plug 'docteurklein/php-getter-setter.vim'
 Plug 'alvan/vim-php-manual'
 Plug 'arnaud-lb/vim-php-namespace'
-"Plug 'shawncplus/phpcomplete.vim'
 Plug 'zxqfl/tabnine-vim'
 Plug 'w0rp/ale'
 Plug 'embear/vim-localvimrc'
 Plug 'maximbaz/lightline-ale'
 Plug 'mbbill/undotree'
 Plug 'svermeulen/vim-yoink'
+Plug 'eugen0329/vim-esearch'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -347,3 +347,12 @@ nmap <F9> <plug>(YoinkPostPasteSwapForward)
 " occurred
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
+
+"let g:esearch = {
+  "\ 'adapter':          'grep',
+  "\ 'backend':          'vim8',
+  "\ 'out':              'win',
+  "\ 'batch_size':       1000,
+  "\ 'use':              ['visual', 'hlsearch', 'last'],
+  "\ 'default_mappings': 1,
+  "\}

@@ -1,0 +1,6 @@
+let g:ale_linters = {
+\   'php': ['php', 'phpstan'],
+\}
+
+let ale_php_phpstan_executable="/Users/spope/boulot/betterise-api/phpstan.sh"
+let g:ale_php_phpstan_level = '4'
