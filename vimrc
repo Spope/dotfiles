@@ -1,5 +1,6 @@
 " Cancek VI compatibility
 set nocompatible
+let mapleader="\<Space>"
 
 call plug#begin('~/.vim/plugged')
 
@@ -32,11 +33,14 @@ Plug 'eugen0329/vim-esearch'
 "  Make sure you use single quotes
 call plug#end()
 
-" Create .lvimrc into a project for local conf
+source ~/dotfiles/vim/plugins.vim
+source ~/dotfiles/vim/functions.vim
+source ~/dotfiles/vim/mappings.vim
 
-""""""""""""""""""
-" Display
-""""""""""""""""""
+"===============================================================================
+" Options:
+"===============================================================================
+syntax enable  " Syntax hightlight
 set title             " Update window title
 set number            " line number
 "set relativenumber    " Relative line number
@@ -58,24 +62,18 @@ set guioptions-=r     " remove right-hand scroll bar
 set guioptions-=L     " remove left-hand scroll bar
 set autoread          " Reload file on external change
 
-autocmd BufNewFile,BufRead *.log set synmaxcol=200  "Stop color highlight on lines of 200+ characters (slow)
-
-hi NonText ctermfg=7 guifg=gray " Non text chars color
-
-syntax enable  " Syntax hightlight
-
 " Specific behaviour for file (syntax, indent ...)
 filetype on
 filetype plugin on
 filetype indent on
 
-" -- Search
+" Search
 set ignorecase        " Ignore case on serach
 set smartcase         " Search with case if case in search
 set incsearch         " Higligth search during search
 set hlsearch          " Higligth search
 
-" -- Beep
+" Beep
 set visualbell        " No beep
 set noerrorbells      " No beep
 
@@ -93,6 +91,25 @@ set hidden
 set undofile " Maintain undo history between sessions"
 set undodir=~/dotfiles/vim/undodir
 
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+else
+    set wildignore+=.git\*,.hg\*,.svn\*
+endif
+
+set splitright
+
+" Fold
+set foldmethod=indent
+set foldlevel=1
+hi Folded guibg=#262626 ctermbg=235
+
+"===============================================================================
+" Appearence:
+"===============================================================================
+hi NonText ctermfg=7 guifg=gray " Non text chars color
 " colorscheme mustang
 set background=dark
 set termguicolors
@@ -111,72 +128,24 @@ else
     endif
 endif
 
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-else
-    set wildignore+=.git\*,.hg\*,.svn\*
-endif
-
-"CtrlP
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|vendor|cache)|(\.(git|hg|svn))$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-" Search tags wiht \
-nnoremap \ :CtrlPTag<cr>
-nnoremap <C-]> :vsp <CR>:exec("tag " . expand("<cword>"))<CR>
-map <C-^> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-" Got to tag under cursor > ctrl+$ on mac os ctrl+] otherwise
-" ctr+^ to open in new tab
-set splitright
-
 " Show tab, nbsp and tailing spaces
 exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\uB7"
 set list
 
+" Colors in tmux
+if exists('$TMUX')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 
-" Color in red next highligth
- nnoremap <silent> n   n:call HLNext(0.1)<cr>
- nnoremap <silent> N   N:call HLNext(0.1)<cr>
-hi WhiteOnRed ctermfg=white ctermbg=darkred
-function! HLNext (blinktime)
-    let [bufnum, lnum, col, off] = getpos('.')
-    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-    let target_pat = '\c\%#\%('.@/.'\)'
-    let ring = matchadd('WhiteOnRed', target_pat, 101)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-    call matchdelete(ring)
-    redraw
-endfunction
+"===============================================================================
+" Autocommands:
+"===============================================================================
+"Stop color highlight on lines of 200+ characters (slow)
+autocmd BufNewFile,BufRead *.log set synmaxcol=200
 
-let g:syntastic_quiet_messages = { "type": "style" }
-let g:syntastic_php_checkers = ['php']
-"let g:syntastic_php_phpcs_exec = '/usr/local/bin/phpcs'
-"let g:syntastic_php_phpcs_args = '--standard=PSR2'
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_check_on_open = 1
-let g:syntastic_error_symbol = '✖'
-let g:syntastic_style_error_symbol = '✖'
-let g:syntastic_warning_symbol = '!'
-let g:syntastic_style_warning_symbol = '!'
-
-let g:syntastic_enable_signs = 1
-let g:syntastic_enable_balloons = 1
-let g:syntastic_enable_highlighting = 1
-
-"highlight link SyntasticErrorSign SignColumn
-"highlight link SyntasticWarningSign SignColumn
-"highlight link SyntasticStyleErrorSign SignColumn
-"highlight link SyntasticStyleWarningSign SignColumn
-
-"let g:yntastic_debug = 3
-
-
+" remember last position in file
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " Files format
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
@@ -184,175 +153,34 @@ au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
 au BufRead,BufNewFile *.twig set filetype=htmljinja
 au BufRead,BufNewFile *.njk set filetype=htmljinja
 au BufRead,BufNewFile *.scala set filetype=scala
-
-"""""""""""""""""
-" Key binding
-"""""""""""""""""
-" Leader map for plugins
-let mapleader="\<Space>"
-
-map <leader>lb :CtrlPBuffer <CR>
-
-" Split naviguation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" Indent re-selection
-vnoremap < <gv
-vnoremap > >gv
-
-nnoremap <CR> :nohlsearch<cr>
-
-" map 2 line break + cursor in middle;
-imap <C-c> <CR><Esc>O
-
-" Improve up/down movement on wrapped lines
-nnoremap j gj
-nnoremap k gk
-
-" Copy past to system clipboard
-vmap <Leader>y "+y
-vmap <Leader>p "+p
-nmap <Leader>y "+y
-nmap <Leader>p "+p
-
-" switch between tab
-nnoremap tn :tabn<CR>
-nnoremap tp :tabp<CR>
-
-" I can type :help on my own, thanks.
-noremap <F1> <Esc>
-vnoremap <F1> <Esc>
-inoremap <F1> <Esc>
-
-" Where do you think you are !
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop> imap <right> <nop>
-
-"map <C-J> :sp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-"Remove trailing space on save
-autocmd BufWritePre * %s/\s\+$//e"
-
-":w!! If not sudo, will ask password and save file
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+au BufRead,BufNewFile *.json set ai filetype=javascript
 
 "HTML
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
-"Open nerdtree on F2
-map <F2> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.\.$', '\.$', '\~$', '\.swp$']
+" Clean whitespace on save
+autocmd BufWritePre * call TrimWhiteSpace()
 
-" Indent line carachter displayd
-let g:indentLine_char = '│'
-let g:indentLine_color_term = 238
 
-"php-doc : leader + h
-"Duplicate the template folder to modify it
-let g:pdv_template_dir = $HOME ."/dotfiles/vim/plugged/pdv/templates"
-nnoremap <leader>h :call pdv#DocumentCurrentLine()<CR>
+"===============================================================================
+" Allow overriding these settings:
+"===============================================================================
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-map <C-I> :CtrlPBuffer<CR>
-
-let g:lightline = {
-      \ 'active': {
-      \   'right': [
-      \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-      \              [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'syntastic', 'fileformat', 'fileencoding', 'filetype' ]
-      \   ]
-      \ },
-      \ 'colorscheme': 'quantum',
-      \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
-      \   'linter_checking': 'lightline#ale#checking',
-      \   'linter_warnings': 'lightline#ale#warnings',
-      \   'linter_errors': 'lightline#ale#errors',
-      \   'linter_ok': 'lightline#ale#ok',
-      \ },
-      \ 'component_type': {
-      \   'syntastic': 'error',
-      \   'linter_checking': 'left',
-      \   'linter_warnings': 'warning',
-      \   'linter_errors': 'error',
-      \   'linter_ok': 'left',
-      \ }
-      \ }
-
-if exists('$TMUX')
-  " Colors in tmux
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
 endif
 
+" Allow vim conf per projects
+if filereadable(".project.vim")
+  source .project.vim
+endif
 
-set foldmethod=indent
-set foldlevel=1
-hi Folded guibg=#262626 ctermbg=235
+if filereadable(".editor/project.vim")
+  source .editor/project.vim
+endif
 
-" Generate Getters Setters
-map <leader>g <Plug>PhpgetsetInsertGetterSetter
-
-
-"vim-php-manual
-"Shift + k Open vim help
-"Ctrl  + h Open php.net in browser
-let g:php_manual_online_search_shortcut = '<c-d>'
-
-" Insert php use statement <leader>u
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
-
-" Linter
-let g:ale_linters = {
-\   'php': ['php'],
-\}
-let g:ale_lint_on_text_changed='normal'
-let g:ale_lint_on_enter=1
-
-"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-"nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-command! Err :ALENext
-command! Perr :ALEPrevious
-
-" tabnine read only php file
-let g:ycm_filetype_whitelist = { 'php': 1 }
-
-" localvimrc don't ask and load .lvimrc file if found
-let g:localvimrc_ask=0
+"===============================================================================
+" TIPS
+"===============================================================================
 
 " PHP class autocomplete ctrl-x ctrl-o  (ctrl-n / ctrl-p to navigate)
-
-nnoremap <F5> :UndotreeToggle<cr>
-
-" With these mappings, immediately after performing a paste, you can cycle
-" through the history by hitting <F7> and <F9>
-nmap <F7> <plug>(YoinkPostPasteSwapBack)
-nmap <F9> <plug>(YoinkPostPasteSwapForward)
-" We also need to override the p and P keys to notify Yoink that a paste has
-" occurred
-nmap p <plug>(YoinkPaste_p)
-nmap P <plug>(YoinkPaste_P)
-
-"let g:esearch = {
-  "\ 'adapter':          'grep',
-  "\ 'backend':          'vim8',
-  "\ 'out':              'win',
-  "\ 'batch_size':       1000,
-  "\ 'use':              ['visual', 'hlsearch', 'last'],
-  "\ 'default_mappings': 1,
-  "\}
