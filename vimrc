@@ -43,19 +43,13 @@ source ~/dotfiles/vim/mappings.vim
 syntax enable  " Syntax hightlight
 set title             " Update window title
 set number            " line number
-"set relativenumber    " Relative line number
-"augroup numbertoggle
-  "autocmd!
-  "autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  "autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-"augroup END
 set ruler             " Display cursor position
 set wrap              " Wrap long line
 set scrolloff=3       " Space aroun cursor on top / bottom
 
 set t_Co=256          " 256 colors
 set encoding=utf-8
-set hi=1000           " Command history
+set hi=500            " Command history
 set guioptions-=m     " remove menu bar
 set guioptions-=T     " remove toolbar
 set guioptions-=r     " remove right-hand scroll bar
@@ -104,12 +98,13 @@ set splitright
 " Fold
 set foldmethod=indent
 set foldlevel=1
-hi Folded guibg=#262626 ctermbg=235
+"hi Folded ctermbg=235 ctermfg=7 guibg=#262626
 
 "===============================================================================
 " Appearence:
 "===============================================================================
-hi NonText ctermfg=7 guifg=gray " Non text chars color
+" Non text chars color
+hi NonText ctermfg=7 guifg=gray
 " colorscheme mustang
 set background=dark
 set termguicolors
@@ -128,7 +123,7 @@ else
     endif
 endif
 
-" Show tab, nbsp and tailing spaces
+" Show tab, nbsp and tailing spaces  ,trail:\uB7
 exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\uB7"
 set list
 
@@ -142,10 +137,10 @@ endif
 " Autocommands:
 "===============================================================================
 "Stop color highlight on lines of 200+ characters (slow)
-autocmd BufNewFile,BufRead *.log set synmaxcol=200
+au BufNewFile,BufRead *.log set synmaxcol=200
 
 " remember last position in file
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " Files format
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
@@ -156,15 +151,16 @@ au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile *.json set ai filetype=javascript
 
 "HTML
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+au FileType html set omnifunc=htmlcomplete#CompleteTags
 
 " Clean whitespace on save
-autocmd BufWritePre * call TrimWhiteSpace()
+au BufWritePre * call TrimWhiteSpace()
 
 "===============================================================================
 " Allow overriding these settings:
 "===============================================================================
 
+" SET INTO PLUGINS.VIM BECAUSE WAS SOURCED BEFORE PLUGINS FILES (DONT KNOW WHY)
 " Allow vim conf per projects
 "if filereadable(".project.vim")
     "source .project.vim
