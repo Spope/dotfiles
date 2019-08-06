@@ -23,13 +23,13 @@ Plug 'tobyS/pdv'
 Plug 'docteurklein/php-getter-setter.vim'
 Plug 'alvan/vim-php-manual'
 Plug 'arnaud-lb/vim-php-namespace'
-Plug 'zxqfl/tabnine-vim'
+"Plug 'zxqfl/tabnine-vim'
 Plug 'w0rp/ale'
-Plug 'embear/vim-localvimrc'
 Plug 'maximbaz/lightline-ale'
 Plug 'mbbill/undotree'
-Plug 'svermeulen/vim-yoink'
 Plug 'eugen0329/vim-esearch'
+Plug 'vim-scripts/taglist.vim'
+Plug 'shawncplus/phpcomplete.vim'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -161,23 +161,14 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 " Clean whitespace on save
 autocmd BufWritePre * call TrimWhiteSpace()
 
-
 "===============================================================================
 " Allow overriding these settings:
 "===============================================================================
 
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
 " Allow vim conf per projects
-if filereadable(".project.vim")
-  source .project.vim
-endif
-
-if filereadable(".editor/project.vim")
-  source .editor/project.vim
-endif
+"if filereadable(".project.vim")
+    "source .project.vim
+"endif
 
 "===============================================================================
 " TIPS
