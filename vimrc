@@ -2,6 +2,15 @@
 set nocompatible
 let mapleader="\<Space>"
 
+source ~/dotfiles/vim/plugins.vim
+source ~/dotfiles/vim/functions.vim
+source ~/dotfiles/vim/mappings.vim
+source ~/dotfiles/vim/abbreviations.vim
+
+"===============================================================================
+" Plugins:
+"===============================================================================
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'qpkorr/vim-bufkill'
@@ -13,29 +22,27 @@ Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
-Plug 'lunaru/vim-less'
+Plug 'lunaru/vim-less', { 'for': 'less' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
-Plug 'scrooloose/nerdtree'
-Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'tobyS/vmustache'
-Plug 'tobyS/pdv'
-Plug 'docteurklein/php-getter-setter.vim'
-Plug 'alvan/vim-php-manual'
-Plug 'arnaud-lb/vim-php-namespace'
+Plug 'tobyS/pdv', { 'for': 'php' }
+Plug 'docteurklein/php-getter-setter.vim', { 'for': 'php' }
+Plug 'alvan/vim-php-manual', { 'for': 'php' }
+Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
 "Plug 'zxqfl/tabnine-vim'
 Plug 'w0rp/ale'
 Plug 'maximbaz/lightline-ale'
-Plug 'mbbill/undotree'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'eugen0329/vim-esearch'
-Plug 'vim-scripts/taglist.vim'
-Plug 'shawncplus/phpcomplete.vim'
+Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
+Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 "  Make sure you use single quotes
 call plug#end()
 
-source ~/dotfiles/vim/plugins.vim
-source ~/dotfiles/vim/functions.vim
-source ~/dotfiles/vim/mappings.vim
+" Import custom plugins config
 
 "===============================================================================
 " Options:
@@ -145,10 +152,10 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'
 " Files format
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML
 "TWIG coloration (use htmljinja a python template engine)
-au BufRead,BufNewFile *.twig set filetype=htmljinja
-au BufRead,BufNewFile *.njk set filetype=htmljinja
-au BufRead,BufNewFile *.scala set filetype=scala
-au BufRead,BufNewFile *.json set ai filetype=javascript
+au BufRead,BufNewFile *.twig set ft=htmljinja
+au BufRead,BufNewFile *.njk set ft=htmljinja
+au BufRead,BufNewFile *.scala set ft=scala
+au BufRead,BufNewFile *.json set ai ft=javascript
 
 "HTML
 au FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -156,18 +163,26 @@ au FileType html set omnifunc=htmlcomplete#CompleteTags
 " Clean whitespace on save
 au BufWritePre * call TrimWhiteSpace()
 
+" enable spell check
+au FileType gitcommit setlocal spell spelllang=en_us
+au BufRead,BufNewFile *.md setlocal spell spelllang=en_us,fr_fr
+au BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,fr_fr
+
 "===============================================================================
 " Allow overriding these settings:
 "===============================================================================
-
-" SET INTO PLUGINS.VIM BECAUSE WAS SOURCED BEFORE PLUGINS FILES (DONT KNOW WHY)
+" Local override
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+"
 " Allow vim conf per projects
-"if filereadable(".project.vim")
-    "source .project.vim
-"endif
+if filereadable(".project.vim")
+    source .project.vim
+endif
 
 "===============================================================================
-" TIPS
+" Tips:
 "===============================================================================
 
 " PHP class autocomplete ctrl-x ctrl-o  (ctrl-n / ctrl-p to navigate)

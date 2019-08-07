@@ -1,4 +1,4 @@
-" common files for vim and neovim
+" Import custom plugins config
 for f in split(glob('~/dotfiles/vim/plugins/*.vim'), '\n')
-    source f
+    exe 'source' f
 endfor
