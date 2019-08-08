@@ -39,10 +39,9 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'eugen0329/vim-esearch'
 Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
+Plug 'unblevable/quick-scope'
 "  Make sure you use single quotes
 call plug#end()
-
-" Import custom plugins config
 
 "===============================================================================
 " Options:
@@ -53,7 +52,6 @@ set number            " line number
 set ruler             " Display cursor position
 set wrap              " Wrap long line
 set scrolloff=3       " Space aroun cursor on top / bottom
-
 set t_Co=256          " 256 colors
 set encoding=utf-8
 set hi=500            " Command history
@@ -186,3 +184,5 @@ endif
 "===============================================================================
 
 " PHP class autocomplete ctrl-x ctrl-o  (ctrl-n / ctrl-p to navigate)
+"
+"
