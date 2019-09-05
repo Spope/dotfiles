@@ -15,8 +15,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'qpkorr/vim-bufkill'
 Plug 'itchyny/lightline.vim'
-Plug 'croaker/mustang-vim'
-Plug 'tyrannicaltoucan/vim-quantum'
+"Plug 'croaker/mustang-vim'
+"Plug 'tyrannicaltoucan/vim-quantum'
+"Plug 'jaredgorski/spacecamp'
+Plug 'kaicataldo/material.vim'
+Plug 'sainnhe/edge'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/indentLine'
@@ -111,10 +114,16 @@ set foldlevel=1
 " Non text chars color
 hi NonText ctermfg=7 guifg=gray
 " colorscheme mustang
-set background=dark
+
+"set background=dark
 set termguicolors
-let g:quantum_black=1
-colorscheme quantum
+"let g:quantum_black=1
+"colorscheme quantum
+
+"colorscheme spacecamp_lite
+
+let g:material_theme_style = 'default'
+colorscheme material
 
 if has("win32") || has("win16")
     set guifont=Consolas:h10
@@ -145,7 +154,8 @@ endif
 au BufNewFile,BufRead *.log set synmaxcol=200
 
 " remember last position in file
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+" Deactivated > not cool into NERDTree
+" au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " Files format
 au BufNewFile,BufRead *.tpl :set ft=html " tpl are HTML

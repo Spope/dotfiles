@@ -7,7 +7,7 @@ let g:lightline = {
   \              [ 'syntastic', 'fileformat', 'fileencoding', 'filetype' ]
   \   ]
   \ },
-  \ 'colorscheme': 'quantum',
+  \ 'colorscheme': 'material_vim',
   \ 'component_expand': {
   \   'syntastic': 'SyntasticStatuslineFlag',
   \   'linter_checking': 'lightline#ale#checking',
