@@ -19,6 +19,7 @@ Plug 'itchyny/lightline.vim'
 "Plug 'tyrannicaltoucan/vim-quantum'
 "Plug 'jaredgorski/spacecamp'
 "Plug 'sainnhe/edge'
+"Plug 'arcticicestudio/nord-vim'
 Plug 'kaicataldo/material.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
@@ -43,6 +44,7 @@ Plug 'eugen0329/vim-esearch'
 Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'unblevable/quick-scope'
+Plug 'mtth/scratch.vim'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -122,7 +124,7 @@ set termguicolors
 
 "colorscheme spacecamp_lite
 
-let g:material_theme_style = 'default'
+let g:material_theme_style = 'palenight'
 colorscheme material
 
 if has("win32") || has("win16")
@@ -195,4 +197,4 @@ endif
 
 " PHP class autocomplete ctrl-x ctrl-o  (ctrl-n / ctrl-p to navigate)
 "
-"
+" gs open Scratch window
