@@ -45,6 +45,7 @@ Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'unblevable/quick-scope'
 Plug 'mtth/scratch.vim'
+Plug 'wesQ3/vim-windowswap'
 "  Make sure you use single quotes
 call plug#end()
 
@@ -198,3 +199,6 @@ endif
 " PHP class autocomplete ctrl-x ctrl-o  (ctrl-n / ctrl-p to navigate)
 "
 " gs open Scratch window
+"
+" Invert window :
+" <leader> ww " in a widow, <leader> ww into the other
