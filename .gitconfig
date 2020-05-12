@@ -1,8 +1,8 @@
 [user]
-	email = pinaudt@gmail.com
-	name = Thomas Pinaud
+	email = julien@betterise.me
+	name = Julien Kefli
 [core]
-    excludesfile = /home/devserver/homes/thomas/.gitignore
+	excludesfile = /Users/spope/.gitignore_global
     editor = vim
 [color]
     ui = true
@@ -37,3 +37,11 @@
     conflictstyle = diff3
     ;tool = meld
     ;tool = vimdiff
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/spope/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/spope/.stCommitMsg

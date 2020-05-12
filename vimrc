@@ -15,6 +15,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'qpkorr/vim-bufkill'
 Plug 'itchyny/lightline.vim'
+
+Plug 'sudar/vim-arduino-syntax'
+Plug 'stevearc/vim-arduino'
 "Plug 'croaker/mustang-vim'
 "Plug 'tyrannicaltoucan/vim-quantum'
 "Plug 'jaredgorski/spacecamp'
@@ -32,7 +35,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'tobyS/vmustache'
-Plug 'tobyS/pdv', { 'for': 'php' }
+Plug 'kkoomen/vim-doge'
 Plug 'docteurklein/php-getter-setter.vim', { 'for': 'php' }
 Plug 'alvan/vim-php-manual', { 'for': 'php' }
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
@@ -46,6 +49,7 @@ Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'unblevable/quick-scope'
 Plug 'mtth/scratch.vim'
 Plug 'wesQ3/vim-windowswap'
+Plug 'lifepillar/vim-mucomplete'
 "  Make sure you use single quotes
 call plug#end()
 
