@@ -35,7 +35,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'tobyS/vmustache'
-Plug 'kkoomen/vim-doge'
+Plug 'kkoomen/vim-doge' "doc generator
 Plug 'docteurklein/php-getter-setter.vim', { 'for': 'php' }
 Plug 'alvan/vim-php-manual', { 'for': 'php' }
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
