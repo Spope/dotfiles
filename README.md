@@ -41,6 +41,7 @@ On Windows:
     ln -s ~/dotfiles/.gitconfig ~/.gitconfig
     ln -s ~/dotfiles/.screenrc ~/.screenrc
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+    ln -s ~/dotfiles/.mongorc.js ~/.mongorc.js
 
 ## Mucks configuration
 

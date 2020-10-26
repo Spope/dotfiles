@@ -57,3 +57,6 @@ map <C-^> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " Color in red next highligth (HLNext in function.vim)
 " nnoremap <silent> n   n:call HLNext(0.1)<cr>
 " nnoremap <silent> N   N:call HLNext(0.1)<cr>
+
+" toogle line number mode
+nnoremap <leader>rn :set rnu!<cr>

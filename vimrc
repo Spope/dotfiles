@@ -16,13 +16,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'qpkorr/vim-bufkill'
 Plug 'itchyny/lightline.vim'
 
-Plug 'sudar/vim-arduino-syntax'
-Plug 'stevearc/vim-arduino'
 "Plug 'croaker/mustang-vim'
-"Plug 'tyrannicaltoucan/vim-quantum'
-"Plug 'jaredgorski/spacecamp'
-"Plug 'sainnhe/edge'
-"Plug 'arcticicestudio/nord-vim'
 Plug 'kaicataldo/material.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
@@ -34,24 +28,29 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'tobyS/vmustache'
 Plug 'kkoomen/vim-doge' "doc generator
 Plug 'docteurklein/php-getter-setter.vim', { 'for': 'php' }
+Plug 'vim-vdebug/vdebug', { 'for': 'php' }
 Plug 'alvan/vim-php-manual', { 'for': 'php' }
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
-"Plug 'zxqfl/tabnine-vim'
 Plug 'w0rp/ale'
 Plug 'maximbaz/lightline-ale'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'eugen0329/vim-esearch'
 Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
-Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-Plug 'unblevable/quick-scope'
+"Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'mtth/scratch.vim'
 Plug 'wesQ3/vim-windowswap'
-Plug 'lifepillar/vim-mucomplete'
+"Plug 'lifepillar/vim-mucomplete'
+Plug 'pechorin/any-jump.vim'
+Plug 'vimwiki/vimwiki'
+"Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master'}
+Plug 'ap/vim-css-color'
+"Plug 'zxqfl/tabnine-vim' " Extensive autocomplete
+Plug 'codota/tabnine-vim' " Extensive autocomplete
 "  Make sure you use single quotes
 call plug#end()
+
 
 "===============================================================================
 " Options:
@@ -180,8 +179,8 @@ au BufWritePre * call TrimWhiteSpace()
 
 " enable spell check
 au FileType gitcommit setlocal spell spelllang=en_us
-au BufRead,BufNewFile *.md setlocal spell spelllang=en_us,fr_fr
-au BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,fr_fr
+au BufRead,BufNewFile *.md setlocal spell spelllang=en_us,fr
+au BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,fr
 
 "===============================================================================
 " Allow overriding these settings:
@@ -205,4 +204,28 @@ endif
 " gs open Scratch window
 "
 " Invert window :
-" <leader> ww " in a widow, <leader> ww into the other
+" <leader> ww   " in a widow, <leader> ww into the other
+"
+" Last search :
+" q/  q?
+"
+" Mark cursor position / go to
+" mA   'A
+"
+" Move to next / previous position into jumplist
+" ctrl-I, ctrl-O
+"
+" In visual mode (v) select line  will increment number on each line
+" g ctrl + a
+"
+" Re-select previous visual selection
+" gv
+"" During macro, do not redraw during macro
+" set lazyredraw
+"
+" Execute command on line that matches regex (v is for exlude)
+" :g/regex/command
+" :g/popo/d  > delete all lines with popo
+" :v/popo/d  > delete all lines without popo
+"
+" VimWiki : <leader> ws
