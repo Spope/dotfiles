@@ -28,7 +28,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'kkoomen/vim-doge' "doc generator
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } } "doc generator
 Plug 'docteurklein/php-getter-setter.vim', { 'for': 'php' }
 Plug 'vim-vdebug/vdebug', { 'for': 'php' }
 Plug 'alvan/vim-php-manual', { 'for': 'php' }
@@ -46,7 +46,6 @@ Plug 'pechorin/any-jump.vim'
 Plug 'vimwiki/vimwiki'
 "Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master'}
 Plug 'ap/vim-css-color'
-"Plug 'zxqfl/tabnine-vim' " Extensive autocomplete
 Plug 'codota/tabnine-vim' " Extensive autocomplete
 "  Make sure you use single quotes
 call plug#end()
@@ -229,3 +228,5 @@ endif
 " :v/popo/d  > delete all lines without popo
 "
 " VimWiki : <leader> ws
+"
+" AnyJump : <leader> j
