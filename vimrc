@@ -17,7 +17,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'itchyny/lightline.vim'
 
 "Plug 'croaker/mustang-vim'
-Plug 'kaicataldo/material.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/indentLine'
@@ -46,7 +46,7 @@ Plug 'pechorin/any-jump.vim'
 Plug 'vimwiki/vimwiki'
 "Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master'}
 Plug 'ap/vim-css-color'
-Plug 'codota/tabnine-vim' " Extensive autocomplete
+"Plug 'codota/tabnine-vim' " Extensive autocomplete
 "  Make sure you use single quotes
 call plug#end()
 
@@ -81,7 +81,7 @@ set incsearch         " Higligth search during search
 set hlsearch          " Higligth search
 
 " Beep
-set visualbell        " No beep
+" set visualbell        " No beep
 set noerrorbells      " No beep
 
 "convert tab to space

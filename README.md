@@ -32,11 +32,18 @@ On Windows:
 
 ## Preferences
 
-    On the existing .bashrc, add
+Bash :
+On the existing .bashrc, add
 
     if [ -f ~/dotfiles/.bash_profile ]; then
         source ~/dotfiles/.bash_profile
     fi
+
+Zsh :
+
+    ln -s ~/dotfiles/.zprofile ~/.zprofile
+
+Tools :
 
     ln -s ~/dotfiles/.gitconfig ~/.gitconfig
     ln -s ~/dotfiles/.screenrc ~/.screenrc
