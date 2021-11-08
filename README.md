@@ -41,7 +41,7 @@ On the existing .bashrc, add
 
 Zsh :
 
-    ln -s ~/dotfiles/.zprofile ~/.zprofile
+    ln -s ~/dotfiles/.zshrc ~/.zshrc
 
 Tools :
 
