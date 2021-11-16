@@ -26,11 +26,15 @@ alias ll='ls -al --color=auto'
 alias grep='grep --color=auto'
 
 alias tmux='tmux -2'
+alias vim='/opt/homebrew/bin/vim'
+alias ctags='/opt/homebrew/bin/ctags'
 
 alias weather='curl wttr.in/Bordeaux'
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
+# Load Git completion
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
+
 
 ctags=/opt/homebrew/bin/ctags
