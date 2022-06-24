@@ -1,8 +1,8 @@
 [user]
-    email = thomas.pinaud@betterise.me
-    name = Thomas Pinaud
+	email = thomas.pinaud@betterise.me
+	name = Thomas Pinaud
 [core]
-    excludesfile = /Users/spope/.gitignore_global
+	excludesfile = /Users/spope/.gitignore_global
     editor = vim
 [color]
     ui = true
@@ -38,10 +38,10 @@
     ;tool = meld
     ;tool = vimdiff
 [difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path =
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-    cmd = /Users/spope/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [commit]
-    template = /Users/spope/.stCommitMsg
+	template = /Users/spope/.stCommitMsg

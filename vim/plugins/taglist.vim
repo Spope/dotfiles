@@ -1,6 +1,10 @@
 "vim taglist
 ""<NUL> = <C-Space>
-map <NUL> :TlistToggle<CR>
+if has('nvim')
+    map <C-Space> :TlistToggle<CR>
+else
+    map <NUL> :TlistToggle<CR>
+endif
 let Tlist_GainFocus_On_ToggleOpen = 1
 " List only current buffer
 let Tlist_Show_One_File = 1

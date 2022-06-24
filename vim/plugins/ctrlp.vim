@@ -16,4 +16,5 @@ let g:ctrlp_custom_ignore = {
 " Search tags wiht \
 nnoremap \ :CtrlPTag<cr>
 
-nnoremap <C-I> :CtrlPBuffer<cr>
+"nnoremap <C-I> :CtrlPBuffer<cr>
+nnoremap <Tab> :CtrlPBuffer<cr>
