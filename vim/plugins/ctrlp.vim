@@ -1,6 +1,9 @@
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" ctrl + v to paste into ctrlP search
+let g:ctrlp_prompt_mappings = { 'PrtInsert("c")': ['<c-v>'] }
+
 if has("win16") || has("win32")
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 else
