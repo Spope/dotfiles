@@ -25,10 +25,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'lunaru/vim-less', { 'for': 'less' }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } } "doc generator
 Plug 'docteurklein/php-getter-setter.vim', { 'for': 'php' }
 Plug 'vim-vdebug/vdebug', { 'for': 'php' }
 Plug 'alvan/vim-php-manual', { 'for': 'php' }
@@ -38,15 +36,28 @@ Plug 'maximbaz/lightline-ale'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'eugen0329/vim-esearch'
 Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
-"Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'mtth/scratch.vim'
 Plug 'wesQ3/vim-windowswap'
-"Plug 'lifepillar/vim-mucomplete'
 Plug 'pechorin/any-jump.vim'
-Plug 'vimwiki/vimwiki'
-"Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master'}
+Plug 'vimwiki/vimwiki', {'branch': 'master'}
+"
+"PHP autocomplete
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'phpactor/ncm2-phpactor'
+"
 Plug 'ap/vim-css-color'
+Plug 'vim-test/vim-test'
+
+"Plug 'github/copilot.vim'
 "Plug 'codota/tabnine-vim' " Extensive autocomplete
+
+"" Snippets
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
 "  Make sure you use single quotes
 call plug#end()
 
@@ -155,8 +166,8 @@ endif
 "===============================================================================
 " Autocommands:
 "===============================================================================
-"Stop color highlight on lines of 200+ characters (slow)
-au BufNewFile,BufRead *.log set synmaxcol=200
+"Stop color highlight on lines of 300+ characters (slow)
+au BufNewFile,BufRead *.log set synmaxcol=300
 
 " remember last position in file
 " Deactivated > not cool into NERDTree

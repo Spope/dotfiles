@@ -1,8 +1,8 @@
 [user]
-	email = thomas.pinaud@betterise.me
+	email = thomas.pinaud@resilience.care
 	name = Thomas Pinaud
 [core]
-	excludesfile = /Users/spope/.gitignore_global
+    ;excludesfile = /Users/spope/.gitignore_global
     editor = vim
 [color]
     ui = true
@@ -22,6 +22,7 @@
     untracked = cyan
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /Users/thomas/.gitignore_global
 [branch]
     autosetupmerge = true
 [alias]
@@ -44,4 +45,5 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = /Users/spope/.stCommitMsg
+	template = /Users/thomas/.stCommitMsg
+	;template = /Users/spope/.stCommitMsg

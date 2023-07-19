@@ -2,7 +2,7 @@
 # BetteriseApi project
 #
 name: BetteriseApi
-dir: /Users/spope/boulot/betterise-api
+dir: /Users/thomas/work/betterise-api
 mux: tmux
 
 [Vim]

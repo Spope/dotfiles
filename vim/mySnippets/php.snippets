@@ -1,0 +1,31 @@
+snippet c
+<?php
+
+namespace ${0:${VISUAL}};
+
+class ${1:`!p snip.rv = snip.basename`}
+{
+    public function __construct() {}
+}
+endsnippet
+
+snippet i
+<?php
+
+namespace ${0:${VISUAL}};
+
+interface ${1:`!p snip.rv = snip.basename`}
+{
+}
+endsnippet
+
+snippet e
+<?php
+
+namespace ${0:${VISUAL}};
+
+enum ${1:`!p snip.rv = snip.basename`} : String
+{
+    case  = '';
+}
+endsnippet

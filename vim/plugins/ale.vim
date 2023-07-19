@@ -1,9 +1,12 @@
 " Linter
 let g:ale_linters = {
 \   'php': ['php'],
+\   'javascript': ['jshint']
 \}
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_on_enter=1
+
+let g:ale_virtualtext_cursor=0
 
 command! Err :ALENext
 command! Perr :ALEPrevious
