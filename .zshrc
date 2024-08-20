@@ -38,3 +38,4 @@ autoload -Uz compinit && compinit
 
 
 ctags=/opt/homebrew/bin/ctags
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"

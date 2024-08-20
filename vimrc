@@ -50,6 +50,10 @@ Plug 'phpactor/ncm2-phpactor'
 Plug 'ap/vim-css-color'
 Plug 'vim-test/vim-test'
 
+"LSP
+Plug 'prabirshrestha/vim-lsp'
+Plug 'rhysd/vim-lsp-ale'
+
 "Plug 'github/copilot.vim'
 "Plug 'codota/tabnine-vim' " Extensive autocomplete
 
