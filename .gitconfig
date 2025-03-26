@@ -1,6 +1,7 @@
 [user]
 	email = thomas.pinaud@resilience.care
 	name = Thomas Pinaud
+	signingkey = 0BF8A60760000281
 [core]
     ;excludesfile = /Users/spope/.gitignore_global
     editor = vim
@@ -46,4 +47,6 @@
 	trustExitCode = true
 [commit]
 	template = /Users/thomas/.stCommitMsg
+	gpgsign = true
 	;template = /Users/spope/.stCommitMsg
+[safe]

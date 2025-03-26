@@ -40,6 +40,8 @@ Plug 'mtth/scratch.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'pechorin/any-jump.vim'
 Plug 'vimwiki/vimwiki', {'branch': 'master'}
+Plug 'hashivim/vim-terraform'
+Plug 'jamessan/vim-gnupg'
 "
 "PHP autocomplete
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
@@ -56,11 +58,6 @@ Plug 'rhysd/vim-lsp-ale'
 
 "Plug 'github/copilot.vim'
 "Plug 'codota/tabnine-vim' " Extensive autocomplete
-
-"" Snippets
-Plug 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
 
 "  Make sure you use single quotes
 call plug#end()
@@ -184,6 +181,8 @@ au BufRead,BufNewFile *.twig set ft=htmljinja
 au BufRead,BufNewFile *.njk set ft=htmljinja
 au BufRead,BufNewFile *.scala set ft=scala
 au BufRead,BufNewFile *.json set ai ft=javascript
+au BufRead,BufNewFile *.avdl setlocal filetype=avro-idl
+au BufRead,BufNewFile *.avsc setlocal filetype=avro-idl
 
 "HTML
 au FileType html set omnifunc=htmlcomplete#CompleteTags
