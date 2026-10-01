@@ -14,6 +14,12 @@ On Windows :
     mklink "c:\Users\USERNAME\.vimrc" "C:\Users\USERNAME\dotfiles\vimrc"
     mklink /D "c:\Users\USERNAME\vimfiles" "C:\Users\USERNAME\dotfiles\vim"
 
+## Neovim (LazyVim) configuration
+
+    ln -s ~/dotfiles/nvim ~/.config/nvim
+
+Then in Neovim, run `:Lazy restore` to install the plugin versions pinned in `lazy-lock.json`.
+
 ## Sublime Text 3 configuration
 
 On Linux:
