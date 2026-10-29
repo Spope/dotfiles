@@ -20,6 +20,28 @@ On Windows :
 
 Then in Neovim, run `:Lazy restore` to install the plugin versions pinned in `lazy-lock.json`.
 
+## Omarchy configuration
+
+Customizations on top of a stock [Omarchy](https://omarchy.org/) install, in `omarchy/`:
+
+* `hypr/monitors.lua`: screen zoom (`GDK_SCALE` 1, monitor scale 1.15)
+* `hypr/input.lua`: trackpad (sensitivity 0.25, adaptive acceleration, natural scroll, scroll factor 0.1) and Caps Lock as Ctrl (both Shifts toggle Caps Lock)
+* `herdr/config.toml`: herdr without onboarding and toast notifications
+
+On a fresh install, back up the Omarchy defaults and link these files in their place:
+
+    for f in hypr/monitors.lua hypr/input.lua herdr/config.toml; do
+        mv ~/.config/$f ~/.config/$f.omarchy-default
+        ln -s ~/dotfiles/omarchy/$f ~/.config/$f
+    done
+
+Hyprland reloads automatically; check for errors with:
+
+    hyprctl reload && hyprctl configerrors
+
+Note: these are full copies of Omarchy's files. After an Omarchy update, compare them with
+`/usr/share/omarchy/config/` to pick up new defaults.
+
 ## Sublime Text 3 configuration
 
 On Linux:
