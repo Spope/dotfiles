@@ -78,6 +78,16 @@ Tools :
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
     ln -s ~/dotfiles/.mongorc.js ~/.mongorc.js
 
+Git identity is machine-specific and kept out of `.gitconfig`. Set it in the local git config:
+
+    git config --file ~/.config/git/config user.name "Thomas Pinaud"
+    git config --file ~/.config/git/config user.email "you@example.com"
+
+To sign commits on a machine that has your GPG key, add there too:
+
+    git config --file ~/.config/git/config user.signingkey <KEY_ID>
+    git config --file ~/.config/git/config commit.gpgsign true
+
 ## Mucks configuration
 
     ln -s ~/dotfiles/tmuxConfigurations/mucks-command.sh /usr/local/bin/mucks-command
