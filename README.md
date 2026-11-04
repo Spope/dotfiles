@@ -24,16 +24,22 @@ Then in Neovim, run `:Lazy restore` to install the plugin versions pinned in `la
 
 Customizations on top of a stock [Omarchy](https://omarchy.org/) install, in `omarchy/`:
 
-* `hypr/monitors.lua`: screen zoom (`GDK_SCALE` 1, monitor scale 1.15)
-* `hypr/input.lua`: trackpad (sensitivity 0.25, adaptive acceleration, natural scroll, scroll factor 0.1) and Caps Lock as Ctrl (both Shifts toggle Caps Lock)
+* `hypr/monitors.lua`: screen zoom (`GDK_SCALE` 1, monitor scale 1.15), desk layout (two AOC monitors + laptop) and per-monitor workspace rules
+* `hypr/input.lua`: trackpad (sensitivity 0.25, adaptive acceleration, natural scroll, scroll factor 0.1), Caps Lock as Ctrl (both Shifts toggle Caps Lock), Left Alt and Left Super swapped, and a slower curve for the Corsair mouse
 * `herdr/config.toml`: herdr without onboarding and toast notifications
+* `omarchy/shell.json`: bar layout (clock shows the date), idle and lock timeouts
+* `omarchy/plugins/thomas.workspaces`: bar widget showing only the focused monitor's workspaces
 
 On a fresh install, back up the Omarchy defaults and link these files in their place:
 
-    for f in hypr/monitors.lua hypr/input.lua herdr/config.toml; do
-        mv ~/.config/$f ~/.config/$f.omarchy-default
+    for f in hypr/monitors.lua hypr/input.lua herdr/config.toml omarchy/shell.json omarchy/plugins/thomas.workspaces; do
+        mkdir -p "$(dirname ~/.config/$f)"
+        [ -e ~/.config/$f ] && mv ~/.config/$f ~/.config/$f.omarchy-default
         ln -s ~/dotfiles/omarchy/$f ~/.config/$f
     done
+
+Editing a linked file with `sed -i` (or any tool that writes a new file and renames it)
+replaces the symlink with a plain file. Check with `ls -l ~/.config/hypr/` if changes stop showing up here.
 
 Hyprland reloads automatically; check for errors with:
 

@@ -58,19 +58,26 @@
 
 -- Pointer speed/acceleration and touchpad scrolling.
 hl.config({
-  input = {
-    sensitivity = 0.25,
-    accel_profile = "adaptive",
-    touchpad = {
-      natural_scroll = true,
-      scroll_factor = 0.1,
-    },
-  },
+	input = {
+		sensitivity = 0.25,
+		accel_profile = "adaptive",
+		touchpad = {
+			natural_scroll = true,
+			scroll_factor = 0.1,
+		},
+	},
 })
 
 -- Make Caps Lock an extra Ctrl (replaces Omarchy's default compose:caps).
+-- Swap Left Alt and Left Super (Windows key).
 hl.config({
-  input = {
-    kb_options = "ctrl:nocaps,shift:both_capslock_cancel",
-  },
+	input = {
+		kb_options = "ctrl:nocaps,shift:both_capslock_cancel,altwin:swap_lalt_lwin",
+	},
+})
+
+-- External mouse: slower than the trackpad.
+hl.device({
+	name = "corsair-corsair-harpoon-rgb-pro-gaming-mouse",
+	accel_profile = "custom 1 0 0.24 0.48 1.28 2.48 3.2",
 })
