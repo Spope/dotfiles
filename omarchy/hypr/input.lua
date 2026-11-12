@@ -64,6 +64,8 @@ hl.config({
 		touchpad = {
 			natural_scroll = true,
 			scroll_factor = 0.1,
+			-- Stop accidental tap + slide from starting a drag/selection.
+			tap_and_drag = false,
 		},
 	},
 })
