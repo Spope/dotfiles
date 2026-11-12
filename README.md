@@ -26,11 +26,10 @@ Customizations on top of a stock [Omarchy](https://omarchy.org/) install, in `om
 
 * `hypr/input.lua`: trackpad (sensitivity 0.25, adaptive acceleration, natural scroll, scroll factor 0.1, no tap-and-drag), Caps Lock as Ctrl (both Shifts toggle Caps Lock), Left Alt and Left Super swapped, and a slower curve for the Corsair mouse
 * `herdr/config.toml`: herdr without onboarding and toast notifications
-* `omarchy/plugins/thomas.workspaces`: bar widget showing only the focused monitor's workspaces
 
 On a fresh install, back up the Omarchy defaults and link these files in their place:
 
-    for f in hypr/input.lua herdr/config.toml omarchy/plugins/thomas.workspaces; do
+    for f in hypr/input.lua herdr/config.toml; do
         mkdir -p "$(dirname ~/.config/$f)"
         [ -e ~/.config/$f ] && mv ~/.config/$f ~/.config/$f.omarchy-default
         ln -s ~/dotfiles/omarchy/$f ~/.config/$f
