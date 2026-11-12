@@ -76,20 +76,19 @@ Zsh :
 
 Tools :
 
-    ln -s ~/dotfiles/.gitconfig ~/.gitconfig
     ln -s ~/dotfiles/.screenrc ~/.screenrc
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
     ln -s ~/dotfiles/.mongorc.js ~/.mongorc.js
 
-Git identity is machine-specific and kept out of `.gitconfig`. Set it in the local git config:
+Git config (`~/.gitconfig`) is machine-specific and not tracked here. Set it up per machine, e.g.:
 
-    git config --file ~/.config/git/config user.name "Thomas Pinaud"
-    git config --file ~/.config/git/config user.email "you@example.com"
+    git config --global user.name "Thomas Pinaud"
+    git config --global user.email "you@example.com"
 
 To sign commits on a machine that has your GPG key, add there too:
 
-    git config --file ~/.config/git/config user.signingkey <KEY_ID>
-    git config --file ~/.config/git/config commit.gpgsign true
+    git config --global user.signingkey <KEY_ID>
+    git config --global commit.gpgsign true
 
 ## Mucks configuration
 
